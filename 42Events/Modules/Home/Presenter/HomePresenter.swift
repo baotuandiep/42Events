@@ -21,5 +21,9 @@ extension HomePresenter: HomeViewToPresenterProtocol {
 }
 
 extension HomePresenter: HomeInteractorToPresenterProtocol {
-
+    func receiveData(data: HomeDataModel) {
+        DispatchQueue.main.async { [weak self] in
+            self?.view?.receiveData(data: data)
+        }
+    }
 }

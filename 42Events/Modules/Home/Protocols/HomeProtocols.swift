@@ -16,7 +16,7 @@ protocol HomeViewToPresenterProtocol: class {
 }
 
 protocol HomePresenterToViewProtocol: class {
-
+    func receiveData(data: HomeDataModel)
 }
 
 protocol HomePresenterToRouterProtocol: class {
@@ -29,5 +29,5 @@ protocol HomePresenterToInteractorProtocol: class {
 }
 
 protocol HomeInteractorToPresenterProtocol: class {
-
+    func receiveData(data: HomeDataModel)
 }
