@@ -14,6 +14,8 @@ class NormalTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     var datas: [EventModel] = []
 
+    let padding: CGFloat = 50
+
     private var currentTagHeight = 0
 
     override func awakeFromNib() {
@@ -24,6 +26,9 @@ class NormalTableViewCell: UITableViewCell {
     func setData(datas: [EventModel]) {
         self.datas = datas
         let customLayout = CenterCollectionViewFlowLayout()
+        customLayout.paddingLeft = padding / 2
+        collectionView.contentInset.left = customLayout.paddingLeft
+        collectionView.contentInset.right = customLayout.paddingLeft
         collectionView.collectionViewLayout = customLayout
         collectionView.reloadData()
     }
@@ -42,6 +47,6 @@ extension NormalTableViewCell: UICollectionViewDataSource {
 
 extension NormalTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width - 50, height: collectionViewHeightConstraint.constant)
+        CGSize(width: collectionView.frame.width - padding, height: collectionViewHeightConstraint.constant)
     }
 }
