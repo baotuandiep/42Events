@@ -244,6 +244,7 @@
 		4E3E128E265F4DC90004D9AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4E0A580126600CBC005E59D1 /* Header */,
 				4E3E12AC265F9BE30004D9AD /* Cells */,
 				4E3E1294265F4E150004D9AD /* HomeViewController.swift */,
 				4E3E1295265F4E150004D9AD /* HomeViewController.xib */,
@@ -317,7 +318,6 @@
 		4E3E12AC265F9BE30004D9AD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4E0A580126600CBC005E59D1 /* Header */,
 				4E17FFA9265FB04E0013FEB1 /* Normal */,
 				4E3E12B5265F9D530004D9AD /* Feature */,
 			);
