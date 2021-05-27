@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E17FFAD265FB08B0013FEB1 /* NormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17FFAB265FB08B0013FEB1 /* NormalTableViewCell.swift */; };
+		4E17FFAE265FB08B0013FEB1 /* NormalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E17FFAC265FB08B0013FEB1 /* NormalTableViewCell.xib */; };
+		4E17FFB2265FB1F90013FEB1 /* NormalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17FFB0265FB1F90013FEB1 /* NormalCollectionViewCell.swift */; };
+		4E17FFB3265FB1F90013FEB1 /* NormalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E17FFB1265FB1F90013FEB1 /* NormalCollectionViewCell.xib */; };
+		4E17FFB7265FB34E0013FEB1 /* CenterCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17FFB6265FB34E0013FEB1 /* CenterCollectionViewFlowLayout.swift */; };
 		4E3E126B265F4D960004D9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E126A265F4D960004D9AD /* AppDelegate.swift */; };
 		4E3E126D265F4D960004D9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E126C265F4D960004D9AD /* SceneDelegate.swift */; };
 		4E3E126F265F4D960004D9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E126E265F4D960004D9AD /* ViewController.swift */; };
@@ -45,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E17FFAB265FB08B0013FEB1 /* NormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTableViewCell.swift; sourceTree = "<group>"; };
+		4E17FFAC265FB08B0013FEB1 /* NormalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalTableViewCell.xib; sourceTree = "<group>"; };
+		4E17FFB0265FB1F90013FEB1 /* NormalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E17FFB1265FB1F90013FEB1 /* NormalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalCollectionViewCell.xib; sourceTree = "<group>"; };
+		4E17FFB6265FB34E0013FEB1 /* CenterCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		4E3E1267265F4D960004D9AD /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3E126A265F4D960004D9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E3E126C265F4D960004D9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +104,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E17FFA9265FB04E0013FEB1 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				4E17FFAF265FB1DF0013FEB1 /* NormalCollectionViewCell */,
+				4E17FFAA265FB0680013FEB1 /* NormalTableViewCell */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+		4E17FFAA265FB0680013FEB1 /* NormalTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E17FFAB265FB08B0013FEB1 /* NormalTableViewCell.swift */,
+				4E17FFAC265FB08B0013FEB1 /* NormalTableViewCell.xib */,
+			);
+			path = NormalTableViewCell;
+			sourceTree = "<group>";
+		};
+		4E17FFAF265FB1DF0013FEB1 /* NormalCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E17FFB0265FB1F90013FEB1 /* NormalCollectionViewCell.swift */,
+				4E17FFB1265FB1F90013FEB1 /* NormalCollectionViewCell.xib */,
+			);
+			path = NormalCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4E17FFB4265FB3210013FEB1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E17FFB5265FB3290013FEB1 /* CollectionViewFlowLayout */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E17FFB5265FB3290013FEB1 /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				4E17FFB6265FB34E0013FEB1 /* CenterCollectionViewFlowLayout.swift */,
+			);
+			path = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
 		4E3E125E265F4D960004D9AD = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +264,7 @@
 		4E3E12A0265F52FF0004D9AD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4E17FFB4265FB3210013FEB1 /* Views */,
 				4E3E12A5265F7C310004D9AD /* Extensions */,
 				4E3E12A1265F53130004D9AD /* APIManager.swift */,
 				4E3E12BE265FA5E50004D9AD /* ImageCachingManager.swift */,
@@ -233,6 +287,7 @@
 		4E3E12AC265F9BE30004D9AD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4E17FFA9265FB04E0013FEB1 /* Normal */,
 				4E3E12B5265F9D530004D9AD /* Feature */,
 			);
 			path = Cells;
@@ -351,6 +406,8 @@
 				4E3E12B3265F9C310004D9AD /* FeatureTableViewCell.xib in Resources */,
 				4E3E1272265F4D960004D9AD /* Main.storyboard in Resources */,
 				4E3E12B9265F9D7A0004D9AD /* FeatureCollectionViewViewCell.xib in Resources */,
+				4E17FFB3265FB1F90013FEB1 /* NormalCollectionViewCell.xib in Resources */,
+				4E17FFAE265FB08B0013FEB1 /* NormalTableViewCell.xib in Resources */,
 				4E3E1297265F4E150004D9AD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,11 +437,14 @@
 				4E3E129B265F4F0B0004D9AD /* HomePresenter.swift in Sources */,
 				4E3E126D265F4D960004D9AD /* SceneDelegate.swift in Sources */,
 				4E3E129F265F4F7C0004D9AD /* HomeRouter.swift in Sources */,
+				4E17FFAD265FB08B0013FEB1 /* NormalTableViewCell.swift in Sources */,
 				4E3E12BF265FA5E50004D9AD /* ImageCachingManager.swift in Sources */,
 				4E3E12C1265FA64B0004D9AD /* UIImageView+Extensions.swift in Sources */,
 				4E3E12AB265F7C310004D9AD /* UITableViewCell+Extensions.swift in Sources */,
+				4E17FFB7265FB34E0013FEB1 /* CenterCollectionViewFlowLayout.swift in Sources */,
 				4E3E12B8265F9D7A0004D9AD /* FeatureCollectionViewViewCell.swift in Sources */,
 				4E3E1296265F4E150004D9AD /* HomeViewController.swift in Sources */,
+				4E17FFB2265FB1F90013FEB1 /* NormalCollectionViewCell.swift in Sources */,
 				4E3E12A4265F54FB0004D9AD /* EventsModel.swift in Sources */,
 				4E3E129D265F4F4F0004D9AD /* HomeInteractor.swift in Sources */,
 			);

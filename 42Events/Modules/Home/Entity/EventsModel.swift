@@ -45,4 +45,24 @@ struct EventModel: Decodable {
     var brandRaceSlug: String
     var isBrandRace: Bool
     var joined: Bool
+
+    var tags: [String] {
+        var values: [String] = []
+        if !sportType.isEmpty {
+            values.append(sportType)
+        }
+        if raceRunners > 0 {
+            values.append("\(raceRunners) joined")
+        }
+        if let racePrice = racePrice {
+            values.append(racePrice)
+        }
+        if let categories = categories {
+            values.append(contentsOf: categories)
+        }
+        if !eventType.isEmpty {
+            values.append(eventType)
+        }
+        return values
+    }
 }

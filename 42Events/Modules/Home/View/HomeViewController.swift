@@ -8,6 +8,16 @@
 
 import UIKit
 
+enum HomeSection: Int, CaseIterable {
+    case feature
+    case events
+    case startingSoon
+    case popular
+    case newRelease
+    case free
+    case past
+}
+
 class HomeViewController: UIViewController {
 
     var presentor: HomeViewToPresenterProtocol?
@@ -23,10 +33,14 @@ extension HomeViewController {
         title = "Event"
         presentor?.loadData()
         tableView.registerFromNib(forCellClass: FeatureTableViewCell.self)
+        tableView.registerFromNib(forCellClass: NormalTableViewCell.self)
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        data == nil ? 0 : HomeSection.allCases.count
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         data == nil ? 0 : 1
@@ -34,12 +48,18 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let data = data else { return UITableViewCell() }
-        if indexPath.row == 0 {
+        switch HomeSection.allCases[indexPath.section] {
+        case .feature:
             let cell = tableView.dequeueReusableCell(type: FeatureTableViewCell.self, for: indexPath)
             cell.setData(datas: data.featured)
             return cell
+        case .startingSoon:
+            let cell = tableView.dequeueReusableCell(type: NormalTableViewCell.self, for: indexPath)
+            cell.setData(datas: data.startingSoon)
+            return cell
+        default:
+            return UITableViewCell()
         }
-        return UITableViewCell()
     }
 }
 
@@ -55,6 +75,4 @@ extension HomeViewController: HomePresenterToViewProtocol {
         self.data = data
         tableView.reloadData()
     }
-
-
 }
