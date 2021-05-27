@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "category-run.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

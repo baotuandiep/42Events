@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "category-walk.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

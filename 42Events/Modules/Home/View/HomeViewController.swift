@@ -54,6 +54,7 @@ extension HomeViewController {
         presentor?.loadData()
         tableView.registerFromNib(forCellClass: FeatureTableViewCell.self)
         tableView.registerFromNib(forCellClass: NormalTableViewCell.self)
+        tableView.registerFromNib(forCellClass: EventTableViewCell.self)
     }
 }
 
@@ -74,7 +75,8 @@ extension HomeViewController: UITableViewDataSource {
             cell.setData(datas: data.featured)
             return cell
         case .events:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(type: EventTableViewCell.self, for: indexPath)
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(type: NormalTableViewCell.self, for: indexPath)
             cell.updateTargetPoint = { [weak self] in
