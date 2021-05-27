@@ -41,6 +41,7 @@ extension NormalTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(type: NormalCollectionViewCell.self, for: indexPath)
+        cell.configureData(data: datas[indexPath.row])
         return cell
     }
 }

@@ -45,6 +45,7 @@ struct EventModel: Decodable {
     var brandRaceSlug: String
     var isBrandRace: Bool
     var joined: Bool
+    var racePeriod: String
 
     var tags: [String] {
         var values: [String] = []

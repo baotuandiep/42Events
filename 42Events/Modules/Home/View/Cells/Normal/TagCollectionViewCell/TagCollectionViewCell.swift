@@ -10,9 +10,13 @@ import UIKit
 
 class TagCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        containerView.layer.cornerRadius = 15
+        containerView.layer.borderWidth = 1
+        containerView.layer.borderColor = UIColor.gray.cgColor
     }
-
 }
