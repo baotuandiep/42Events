@@ -13,19 +13,22 @@ class LeftCollectionViewFlowLayout: UICollectionViewFlowLayout {
         let attributesForElementsInRect = super.layoutAttributesForElements(in: rect)
         var newAttributesForElementsInRect: [UICollectionViewLayoutAttributes] = []
         var leftMargin = sectionInset.left
+        var currentY: CGFloat = 0
         if let attributesForElementsInRect = attributesForElementsInRect {
             for attributes in attributesForElementsInRect {
                 let indexPath = attributes.indexPath
                 let size = itemSize(for: indexPath)
-                if attributes.frame.origin.x == sectionInset.left {
+                if currentY != attributes.frame.origin.y {
                     leftMargin = sectionInset.left
+                    currentY = attributes.frame.origin.y
+                    attributes.frame.origin.x = leftMargin
                 } else {
                     var newLeftAlignedFrame = attributes.frame
                     newLeftAlignedFrame.origin.x = leftMargin
                     newLeftAlignedFrame.size = size
                     attributes.frame = newLeftAlignedFrame
                 }
-                leftMargin += attributes.frame.width
+                leftMargin += attributes.frame.width + minimumInteritemSpacing
                 newAttributesForElementsInRect.append(attributes)
             }
         }
