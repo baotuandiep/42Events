@@ -16,6 +16,25 @@ enum HomeSection: Int, CaseIterable {
     case newRelease
     case free
     case past
+
+    var headerTitle: String? {
+        switch self {
+        case .feature:
+            return nil
+        case .events:
+            return "Events"
+        case .startingSoon:
+            return "Starting soon"
+        case .popular:
+            return "Popular"
+        case .newRelease:
+            return "New Release"
+        case .free:
+            return "Free"
+        case .past:
+            return "Past Events"
+        }
+    }
 }
 
 class HomeViewController: UIViewController {
@@ -85,6 +104,17 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let title = HomeSection.allCases[section].headerTitle else { return nil }
+        let view = HomeHeaderView.instantiate()
+        view.titleLabel.text = title
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        HomeSection.allCases[section].headerTitle == nil ? 0 : 50
     }
 }
 

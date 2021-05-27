@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeHeaderView" customModule="_2Events" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="434" height="69"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1E-TM-xmU">
+                    <rect key="frame" x="25" y="10" width="44.5" height="49"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="c1E-TM-xmU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="CUL-Nd-T7r"/>
+                <constraint firstItem="c1E-TM-xmU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Mt2-W9-xhX"/>
+                <constraint firstItem="c1E-TM-xmU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="lLg-8c-79y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="c1E-TM-xmU" id="mV6-iE-2oh"/>
+            </connections>
+            <point key="canvasLocation" x="62.318840579710148" y="-167.07589285714286"/>
+        </view>
+    </objects>
+</document>
