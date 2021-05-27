@@ -16,6 +16,10 @@ struct HomeModel: Decodable {
 struct HomeDataModel: Decodable {
     var featured: [EventModel]
     var startingSoon: [EventModel]
+    var popular: [EventModel]
+    var newRelease: [EventModel]
+    var free: [EventModel]
+    var past: [EventModel]
 }
 
 struct EventModel: Decodable {
@@ -28,7 +32,7 @@ struct EventModel: Decodable {
     var endDate: String
     var raceType: String
     var sportType: String
-    var medalEngravingEndDate: String
+    var medalEngravingEndDate: String?
     var raceRunners: Int
     var launchDate: String
     var isNew: Bool
@@ -41,9 +45,4 @@ struct EventModel: Decodable {
     var brandRaceSlug: String
     var isBrandRace: Bool
     var joined: Bool
-
-//    private enum CodingKeys: String, CodingKey {
-//        case isNew = "is_new"
-//        case isFreeEngraving
-//    }
 }
