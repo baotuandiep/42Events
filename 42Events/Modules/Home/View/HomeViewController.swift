@@ -53,12 +53,26 @@ extension HomeViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(type: FeatureTableViewCell.self, for: indexPath)
             cell.setData(datas: data.featured)
             return cell
-        case .startingSoon:
-            let cell = tableView.dequeueReusableCell(type: NormalTableViewCell.self, for: indexPath)
-            cell.setData(datas: data.startingSoon)
-            return cell
-        default:
+        case .events:
             return UITableViewCell()
+        default:
+            let cell = tableView.dequeueReusableCell(type: NormalTableViewCell.self, for: indexPath)
+
+            switch HomeSection.allCases[indexPath.section] {
+            case .startingSoon:
+                cell.setData(datas: data.startingSoon)
+            case .popular:
+                cell.setData(datas: data.popular)
+            case .newRelease:
+                cell.setData(datas: data.newRelease)
+            case .free:
+                cell.setData(datas: data.free)
+            case .past:
+                cell.setData(datas: data.past)
+            default:
+                break
+            }
+            return cell
         }
     }
 }
