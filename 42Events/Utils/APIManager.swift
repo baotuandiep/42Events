@@ -48,7 +48,7 @@ class APIManager: NSObject {
 
     private let urlSession = URLSession.shared
 
-    func loadData<T: Codable>(type: T.Type, path: String, queryParams: [String: Any], completion: @escaping ((APIResult<T>) -> Void)) {
+    func loadData<T: Decodable>(type: T.Type, path: String, queryParams: [String: Any], completion: @escaping ((APIResult<T>) -> Void)) {
         let path = mainPath + "/" + path
         guard let url = url(path: path, queryParams: queryParams) else {
             return completion(.error(.clientError))
@@ -56,7 +56,7 @@ class APIManager: NSObject {
         handleRequest(type: type, url: url, completion: completion)
     }
 
-    private func handleRequest<T: Codable>(type: T.Type, url: URL, completion: @escaping ((APIResult<T>) -> Void)) {
+    private func handleRequest<T: Decodable>(type: T.Type, url: URL, completion: @escaping ((APIResult<T>) -> Void)) {
         let task = urlSession.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 return completion(.error(.requestError(error.localizedDescription)))

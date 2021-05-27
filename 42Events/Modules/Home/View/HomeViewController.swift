@@ -17,7 +17,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        title = "Event"
+        presentor?.loadData()
     }
 }
 

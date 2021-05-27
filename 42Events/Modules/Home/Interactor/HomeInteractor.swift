@@ -13,5 +13,18 @@ class HomeInteractor {
 }
 
 extension HomeInteractor: HomePresenterToInteractorProtocol {
+    
+}
 
+extension HomeInteractor {
+    func loadData() {
+        APIManager.shared.loadData(type: HomeModel.self, path: "race-events", queryParams: [:]) {
+            switch $0 {
+            case .success(let model):
+                print(model.code)
+            case .error(let error):
+                print(error)
+            }
+        }
+    }
 }

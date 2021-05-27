@@ -12,6 +12,7 @@ protocol HomeViewToPresenterProtocol: class {
     var view: HomePresenterToViewProtocol? { get set }
     var interactor: HomePresenterToInteractorProtocol? { get set }
     var router: HomePresenterToRouterProtocol? { get set }
+    func loadData()
 }
 
 protocol HomePresenterToViewProtocol: class {
@@ -24,6 +25,7 @@ protocol HomePresenterToRouterProtocol: class {
 
 protocol HomePresenterToInteractorProtocol: class {
     var presenter: HomeInteractorToPresenterProtocol? { get set }
+    func loadData()
 }
 
 protocol HomeInteractorToPresenterProtocol: class {

@@ -15,7 +15,9 @@ class HomePresenter {
 }
 
 extension HomePresenter: HomeViewToPresenterProtocol {
-
+    func loadData() {
+        interactor?.loadData()
+    }
 }
 
 extension HomePresenter: HomeInteractorToPresenterProtocol {
