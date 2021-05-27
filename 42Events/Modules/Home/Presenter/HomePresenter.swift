@@ -9,7 +9,7 @@
 import Foundation
 
 class HomePresenter {
-    var view: HomePresenterToViewProtocol?
+    weak var view: HomePresenterToViewProtocol?
     var interactor: HomePresenterToInteractorProtocol?
     var router: HomePresenterToRouterProtocol?
 }
