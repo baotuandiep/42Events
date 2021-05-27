@@ -21,15 +21,14 @@ class NormalCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         collectionView.collectionViewLayout = LeftCollectionViewFlowLayout()
         collectionView.registerFromNib(forCellClass: TagCollectionViewCell.self)
+        titleImageView.layer.cornerRadius = 10
     }
 
     func configureData(data: EventModel) {
         guard self.data?._id != data._id else { return }
         self.data = data
-        print("begin", collectionView.contentSize.height)
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
-        print("end", collectionView.contentSize.height)
         dateLabel.text = data.racePeriod
         titleLabel.text = data.raceName
         if let url = URL(string: data.bannerCard) {
@@ -56,7 +55,7 @@ extension NormalCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let data = data else { return .zero }
 
-        let width = NSAttributedString(string: data.tags[indexPath.row], attributes: [.font: UIFont.systemFont(ofSize: 14)]).size().width
+        let width = NSAttributedString(string: data.tags[indexPath.row], attributes: [.font: UIFont.systemFont(ofSize: 12)]).size().width
         return CGSize(width: width + 20, height: 30)
     }
 }

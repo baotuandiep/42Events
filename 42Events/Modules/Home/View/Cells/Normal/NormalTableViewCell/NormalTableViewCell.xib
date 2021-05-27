@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZoQ-p9-3Cb">
-                        <rect key="frame" x="0.0" y="0.0" width="361" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="340"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="300" id="TcD-t2-PKM"/>
+                            <constraint firstAttribute="height" constant="340" id="TcD-t2-PKM"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5uq-cU-7NM">
                             <size key="itemSize" width="128" height="128"/>

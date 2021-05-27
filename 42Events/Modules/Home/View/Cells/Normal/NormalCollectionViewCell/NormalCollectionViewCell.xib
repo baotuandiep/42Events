@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLS-W8-sG5">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="321.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="311.5"/>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aYf-ry-Tcq">
                         <rect key="frame" x="0.0" y="321.5" width="560" height="31.5"/>
@@ -42,7 +42,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="128" id="DXZ-sD-ylM"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="srP-F6-3TD">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="srP-F6-3TD">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -65,7 +65,7 @@
                 <constraint firstItem="pFl-LK-jLX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gfQ-VG-K0J"/>
                 <constraint firstAttribute="trailing" secondItem="fLS-W8-sG5" secondAttribute="trailing" id="m20-3d-Irr"/>
                 <constraint firstItem="pFl-LK-jLX" firstAttribute="top" secondItem="aYf-ry-Tcq" secondAttribute="bottom" constant="10" id="s9S-sR-nQB"/>
-                <constraint firstItem="aYf-ry-Tcq" firstAttribute="top" secondItem="fLS-W8-sG5" secondAttribute="bottom" id="wgv-ee-H6d"/>
+                <constraint firstItem="aYf-ry-Tcq" firstAttribute="top" secondItem="fLS-W8-sG5" secondAttribute="bottom" constant="10" id="wgv-ee-H6d"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="560" height="491"/>
