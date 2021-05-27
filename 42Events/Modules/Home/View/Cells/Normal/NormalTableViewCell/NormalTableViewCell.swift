@@ -13,23 +13,30 @@ class NormalTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     var datas: [EventModel] = []
+    var updateTargetPoint: ((NormalTableViewCell, CGPoint) -> Void)?
 
     let padding: CGFloat = 50
+    let customLayout = CenterCollectionViewFlowLayout()
 
     private var currentTagHeight = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.registerFromNib(forCellClass: NormalCollectionViewCell.self)
-    }
-
-    func setData(datas: [EventModel]) {
-        self.datas = datas
-        let customLayout = CenterCollectionViewFlowLayout()
+        customLayout.updateTargetPoint = { [weak self] point in
+            guard let self = self else { return }
+            self.updateTargetPoint?(self, point)
+        }
         customLayout.paddingLeft = padding / 2
         collectionView.contentInset.left = customLayout.paddingLeft
         collectionView.contentInset.right = customLayout.paddingLeft
         collectionView.collectionViewLayout = customLayout
+    }
+
+    func setData(datas: [EventModel]) {
+        self.datas = datas
+        collectionView.contentInset.left = customLayout.paddingLeft
+        collectionView.contentInset.right = customLayout.paddingLeft
         collectionView.reloadData()
     }
 }

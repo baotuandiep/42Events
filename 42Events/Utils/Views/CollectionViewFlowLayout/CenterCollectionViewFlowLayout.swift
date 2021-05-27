@@ -13,6 +13,7 @@ class CenterCollectionViewFlowLayout: UICollectionViewFlowLayout {
     // MARK: - Public Variable
     var itemsPerPage = 1
     var paddingLeft: CGFloat = 0
+    var updateTargetPoint: ((CGPoint) -> Void)?
 
     // MARK: - Private Variables
     private var _currentPage = 0
@@ -47,7 +48,9 @@ class CenterCollectionViewFlowLayout: UICollectionViewFlowLayout {
             updatedOffset += ((collectionView.delegate as? UICollectionViewDelegateFlowLayout)?.collectionView?(collectionView, layout: self, sizeForItemAt: [0, i]).width ?? 0) + minimumLineSpacing
         }
         _previousOffset = updatedOffset
-        return CGPoint(x: updatedOffset, y: proposedContentOffset.y)
+        let point = CGPoint(x: updatedOffset, y: proposedContentOffset.y)
+        updateTargetPoint?(point)
+        return point
     }
 
     // MARK: - Public Function

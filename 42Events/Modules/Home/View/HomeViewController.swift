@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var data: HomeDataModel?
+    var contentXOffset: [Int: CGFloat] = [:]
 }
 
 // MARK: - View Controller Lifecycle
@@ -57,7 +58,11 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         default:
             let cell = tableView.dequeueReusableCell(type: NormalTableViewCell.self, for: indexPath)
-
+            cell.updateTargetPoint = { [weak self] in
+                guard let indexPath = tableView.indexPath(for: $0) else { return }
+                self?.contentXOffset[indexPath.section] = $1.x
+            }
+            cell.collectionView.contentOffset.x = contentXOffset[indexPath.section] ?? -cell.customLayout.paddingLeft
             switch HomeSection.allCases[indexPath.section] {
             case .startingSoon:
                 cell.setData(datas: data.startingSoon)
