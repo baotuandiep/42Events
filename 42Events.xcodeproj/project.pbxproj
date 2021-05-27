@@ -14,6 +14,12 @@
 		4E3E1274265F4D970004D9AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E1273265F4D970004D9AD /* Assets.xcassets */; };
 		4E3E1277265F4D970004D9AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E1275265F4D970004D9AD /* LaunchScreen.storyboard */; };
 		4E3E1282265F4D970004D9AD /* _2EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E1281265F4D970004D9AD /* _2EventsTests.swift */; };
+		4E3E1296265F4E150004D9AD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E1294265F4E150004D9AD /* HomeViewController.swift */; };
+		4E3E1297265F4E150004D9AD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E1295265F4E150004D9AD /* HomeViewController.xib */; };
+		4E3E1299265F4E5F0004D9AD /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E1298265F4E5F0004D9AD /* HomeProtocols.swift */; };
+		4E3E129B265F4F0B0004D9AD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E129A265F4F0B0004D9AD /* HomePresenter.swift */; };
+		4E3E129D265F4F4F0004D9AD /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E129C265F4F4F0004D9AD /* HomeInteractor.swift */; };
+		4E3E129F265F4F7C0004D9AD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E129E265F4F7C0004D9AD /* HomeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,12 @@
 		4E3E127D265F4D970004D9AD /* 42EventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 42EventsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3E1281265F4D970004D9AD /* _2EventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _2EventsTests.swift; sourceTree = "<group>"; };
 		4E3E1283265F4D970004D9AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E3E1294265F4E150004D9AD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4E3E1295265F4E150004D9AD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4E3E1298265F4E5F0004D9AD /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		4E3E129A265F4F0B0004D9AD /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		4E3E129C265F4F4F0004D9AD /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		4E3E129E265F4F7C0004D9AD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,7 @@
 		4E3E1269265F4D960004D9AD /* 42Events */ = {
 			isa = PBXGroup;
 			children = (
+				4E3E128C265F4DB80004D9AD /* Modules */,
 				4E3E126A265F4D960004D9AD /* AppDelegate.swift */,
 				4E3E126C265F4D960004D9AD /* SceneDelegate.swift */,
 				4E3E126E265F4D960004D9AD /* ViewController.swift */,
@@ -97,6 +110,75 @@
 				4E3E1283265F4D970004D9AD /* Info.plist */,
 			);
 			path = 42EventsTests;
+			sourceTree = "<group>";
+		};
+		4E3E128C265F4DB80004D9AD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E128D265F4DBF0004D9AD /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4E3E128D265F4DBF0004D9AD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E1293265F4DFB0004D9AD /* Protocols */,
+				4E3E1292265F4DF30004D9AD /* Router */,
+				4E3E1291265F4DE50004D9AD /* Entity */,
+				4E3E1290265F4DDC0004D9AD /* Interactor */,
+				4E3E128F265F4DCE0004D9AD /* Presenter */,
+				4E3E128E265F4DC90004D9AD /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4E3E128E265F4DC90004D9AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E1294265F4E150004D9AD /* HomeViewController.swift */,
+				4E3E1295265F4E150004D9AD /* HomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E3E128F265F4DCE0004D9AD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E129A265F4F0B0004D9AD /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4E3E1290265F4DDC0004D9AD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E129C265F4F4F0004D9AD /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4E3E1291265F4DE50004D9AD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4E3E1292265F4DF30004D9AD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E129E265F4F7C0004D9AD /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4E3E1293265F4DFB0004D9AD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E1298265F4E5F0004D9AD /* HomeProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +265,7 @@
 				4E3E1277265F4D970004D9AD /* LaunchScreen.storyboard in Resources */,
 				4E3E1274265F4D970004D9AD /* Assets.xcassets in Resources */,
 				4E3E1272265F4D960004D9AD /* Main.storyboard in Resources */,
+				4E3E1297265F4E150004D9AD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +284,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3E126F265F4D960004D9AD /* ViewController.swift in Sources */,
+				4E3E1299265F4E5F0004D9AD /* HomeProtocols.swift in Sources */,
 				4E3E126B265F4D960004D9AD /* AppDelegate.swift in Sources */,
+				4E3E129B265F4F0B0004D9AD /* HomePresenter.swift in Sources */,
 				4E3E126D265F4D960004D9AD /* SceneDelegate.swift in Sources */,
+				4E3E129F265F4F7C0004D9AD /* HomeRouter.swift in Sources */,
+				4E3E1296265F4E150004D9AD /* HomeViewController.swift in Sources */,
+				4E3E129D265F4F4F0004D9AD /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +457,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tuandiep.-2Events";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tuandiep.42Events;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,7 +475,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tuandiep.-2Events";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tuandiep.42Events;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
