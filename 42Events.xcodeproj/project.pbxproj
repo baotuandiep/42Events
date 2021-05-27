@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0A57F9265FBA6D005E59D1 /* LeftCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A57F8265FBA6D005E59D1 /* LeftCollectionViewFlowLayout.swift */; };
+		4E0A57FD265FBF22005E59D1 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A57FB265FBF22005E59D1 /* TagCollectionViewCell.swift */; };
+		4E0A57FE265FBF22005E59D1 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0A57FC265FBF22005E59D1 /* TagCollectionViewCell.xib */; };
 		4E17FFAD265FB08B0013FEB1 /* NormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17FFAB265FB08B0013FEB1 /* NormalTableViewCell.swift */; };
 		4E17FFAE265FB08B0013FEB1 /* NormalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E17FFAC265FB08B0013FEB1 /* NormalTableViewCell.xib */; };
 		4E17FFB2265FB1F90013FEB1 /* NormalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17FFB0265FB1F90013FEB1 /* NormalCollectionViewCell.swift */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E0A57F8265FBA6D005E59D1 /* LeftCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		4E0A57FB265FBF22005E59D1 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E0A57FC265FBF22005E59D1 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		4E17FFAB265FB08B0013FEB1 /* NormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTableViewCell.swift; sourceTree = "<group>"; };
 		4E17FFAC265FB08B0013FEB1 /* NormalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalTableViewCell.xib; sourceTree = "<group>"; };
 		4E17FFB0265FB1F90013FEB1 /* NormalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,9 +110,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0A57FA265FBF0A005E59D1 /* TagCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E0A57FB265FBF22005E59D1 /* TagCollectionViewCell.swift */,
+				4E0A57FC265FBF22005E59D1 /* TagCollectionViewCell.xib */,
+			);
+			path = TagCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		4E17FFA9265FB04E0013FEB1 /* Normal */ = {
 			isa = PBXGroup;
 			children = (
+				4E0A57FA265FBF0A005E59D1 /* TagCollectionViewCell */,
 				4E17FFAF265FB1DF0013FEB1 /* NormalCollectionViewCell */,
 				4E17FFAA265FB0680013FEB1 /* NormalTableViewCell */,
 			);
@@ -143,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				4E17FFB6265FB34E0013FEB1 /* CenterCollectionViewFlowLayout.swift */,
+				4E0A57F8265FBA6D005E59D1 /* LeftCollectionViewFlowLayout.swift */,
 			);
 			path = CollectionViewFlowLayout;
 			sourceTree = "<group>";
@@ -407,6 +424,7 @@
 				4E3E1272265F4D960004D9AD /* Main.storyboard in Resources */,
 				4E3E12B9265F9D7A0004D9AD /* FeatureCollectionViewViewCell.xib in Resources */,
 				4E17FFB3265FB1F90013FEB1 /* NormalCollectionViewCell.xib in Resources */,
+				4E0A57FE265FBF22005E59D1 /* TagCollectionViewCell.xib in Resources */,
 				4E17FFAE265FB08B0013FEB1 /* NormalTableViewCell.xib in Resources */,
 				4E3E1297265F4E150004D9AD /* HomeViewController.xib in Resources */,
 			);
@@ -429,8 +447,10 @@
 				4E3E12BD265F9E940004D9AD /* UICollectionViewCell+Extensions.swift in Sources */,
 				4E3E126F265F4D960004D9AD /* ViewController.swift in Sources */,
 				4E3E1299265F4E5F0004D9AD /* HomeProtocols.swift in Sources */,
+				4E0A57F9265FBA6D005E59D1 /* LeftCollectionViewFlowLayout.swift in Sources */,
 				4E3E12BB265F9E6B0004D9AD /* UICollectionView+Extensions.swift in Sources */,
 				4E3E126B265F4D960004D9AD /* AppDelegate.swift in Sources */,
+				4E0A57FD265FBF22005E59D1 /* TagCollectionViewCell.swift in Sources */,
 				4E3E12B2265F9C310004D9AD /* FeatureTableViewCell.swift in Sources */,
 				4E3E12AA265F7C310004D9AD /* UITableView+Extensions.swift in Sources */,
 				4E3E12A2265F53130004D9AD /* APIManager.swift in Sources */,
