@@ -58,11 +58,12 @@ extension HomeViewController {
 
 
         let rightItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(rightItemTapped))
+        rightItem.tintColor = .label
         navigationItem.rightBarButtonItem = rightItem
     }
 
     @objc func rightItemTapped() {
-        MenuRouter.createModule()
+        MenuRouter.createModule(on: self.view)
     }
 }
 

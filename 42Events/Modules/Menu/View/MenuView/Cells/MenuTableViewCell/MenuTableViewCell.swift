@@ -12,6 +12,7 @@ class MenuTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleImageView: UIImageView!
+    @IBOutlet weak var valueLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +20,9 @@ class MenuTableViewCell: UITableViewCell {
 
     }
 
-    func configure(menu: MenuRows) {
+    func configure(menu: MenuRows, languageString: String) {
+        valueLabel.isHidden = menu != .language
+        valueLabel.text = languageString
         titleLabel.text = menu.string
         titleImageView.image = menu.imageView
     }

@@ -9,20 +9,20 @@
 import UIKit
 
 class MenuRouter {
-    static func createModule() -> MenuView {
-        let window = UIApplication.shared.connectedScenes.filter({$0.activationState == .foregroundActive})
-        .map({$0 as? UIWindowScene})
-        .compactMap({$0})
-        .first?.windows
-        .filter({$0.isKeyWindow}).first
+    static func createModule(on view: UIView) -> MenuView {
+//        let window = UIApplication.shared.connectedScenes.filter({$0.activationState == .foregroundActive})
+//        .map({$0 as? UIWindowScene})
+//        .compactMap({$0})
+//        .first?.windows
+//        .filter({$0.isKeyWindow}).first
         let menuView = MenuView.instantiate()
-        window?.addSubview(menuView)
+        view.addSubview(menuView)
         menuView.translatesAutoresizingMaskIntoConstraints = false
 
-        menuView.topAnchor.constraint(equalTo: window!.topAnchor).isActive = true
-        menuView.bottomAnchor.constraint(equalTo: window!.bottomAnchor).isActive = true
-        menuView.leadingAnchor.constraint(equalTo: window!.leadingAnchor).isActive = true
-        menuView.trailingAnchor.constraint(equalTo: window!.trailingAnchor).isActive = true
+        menuView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        menuView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        menuView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        menuView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
         return menuView
     }
