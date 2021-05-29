@@ -46,10 +46,34 @@ struct EventModel: Codable {
     var joined: Bool
     var racePeriod: String
 
+    var detailString: String {
+        var values: [String] = []
+        if !sportType.isEmpty {
+            values.append(sportType.capitalized)
+        }
+        if raceRunners > 0 {
+            values.append("\(raceRunners) joined")
+        }
+        if let racePrice = racePrice {
+            values.append(racePrice)
+        }
+        return values.joined(separator: " • ")
+    }
+
+    var categoriesString: String {
+        guard let categories = categories else { return "" }
+        return categories.joined(separator: ", ")
+    }
+
+    var eventTypeString: String {
+        guard !eventType.isEmpty else { return "" }
+        return eventType.capitalized + " submission"
+    }
+
     var tags: [String] {
         var values: [String] = []
         if !sportType.isEmpty {
-            values.append(sportType)
+            values.append(sportType.capitalized)
         }
         if raceRunners > 0 {
             values.append("\(raceRunners) joined")
@@ -60,8 +84,8 @@ struct EventModel: Codable {
         if let categories = categories {
             values.append(contentsOf: categories)
         }
-        if !eventType.isEmpty {
-            values.append(eventType)
+        if !eventTypeString.isEmpty {
+            values.append(eventTypeString)
         }
         return values
     }

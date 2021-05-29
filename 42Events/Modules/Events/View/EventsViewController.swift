@@ -13,7 +13,7 @@ class EventsViewController: UIViewController {
     var presenter: EventsViewToPresenterProtocol?
     var datas: [EventModel] = []
     var header: EventsHeaderView?
-    var isShowMedal = false
+    var isShowMedal = true
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -32,7 +32,7 @@ extension EventsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: EventsTableViewCell.self, for: indexPath)
-        cell.configureData(data: datas[indexPath.row])
+        cell.configureData(data: datas[indexPath.row], isShowMedal: isShowMedal)
         return cell
     }
 }
