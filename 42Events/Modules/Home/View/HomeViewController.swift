@@ -55,6 +55,14 @@ extension HomeViewController {
         tableView.registerFromNib(forCellClass: FeatureTableViewCell.self)
         tableView.registerFromNib(forCellClass: NormalTableViewCell.self)
         tableView.registerFromNib(forCellClass: EventContainerTableViewCell.self)
+
+
+        let rightItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(rightItemTapped))
+        navigationItem.rightBarButtonItem = rightItem
+    }
+
+    @objc func rightItemTapped() {
+        MenuRouter.createModule()
     }
 }
 
@@ -77,7 +85,6 @@ extension HomeViewController: UITableViewDataSource {
         case .events:
             let cell = tableView.dequeueReusableCell(type: EventContainerTableViewCell.self, for: indexPath)
             cell.touchedOnEvent = { [weak self] eventType in
-                print(eventType)
                 guard let navigationController = self?.navigationController else { return }
                 self?.presenter?.touchedOnEvent(navigationController: navigationController, eventType: eventType)
             }

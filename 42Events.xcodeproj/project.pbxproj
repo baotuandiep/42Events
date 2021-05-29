@@ -53,8 +53,14 @@
 		4E3E12BD265F9E940004D9AD /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E12BC265F9E930004D9AD /* UICollectionViewCell+Extensions.swift */; };
 		4E3E12BF265FA5E50004D9AD /* ImageCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E12BE265FA5E50004D9AD /* ImageCachingManager.swift */; };
 		4E3E12C1265FA64B0004D9AD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E12C0265FA64B0004D9AD /* UIImageView+Extensions.swift */; };
+		4E49F56526624E58008C5522 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E49F56426624E58008C5522 /* MenuView.swift */; };
+		4E49F56826624E70008C5522 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E49F56726624E70008C5522 /* MenuView.xib */; };
+		4E49F56A26624F18008C5522 /* MenuEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E49F56926624F18008C5522 /* MenuEntity.swift */; };
+		4E49F56F26625F30008C5522 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E49F56D26625F30008C5522 /* MenuTableViewCell.swift */; };
+		4E49F57026625F30008C5522 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E49F56E26625F30008C5522 /* MenuTableViewCell.xib */; };
 		4E7F52822662374B00594C72 /* EventsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F52812662374B00594C72 /* EventsHeaderView.swift */; };
 		4E7F52842662375700594C72 /* EventsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7F52832662375700594C72 /* EventsHeaderView.xib */; };
+		4E8CD03726629CB100D40DDB /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8CD03626629CB100D40DDB /* MenuRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,8 +124,14 @@
 		4E3E12BC265F9E930004D9AD /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		4E3E12BE265FA5E50004D9AD /* ImageCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCachingManager.swift; sourceTree = "<group>"; };
 		4E3E12C0265FA64B0004D9AD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		4E49F56426624E58008C5522 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		4E49F56726624E70008C5522 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		4E49F56926624F18008C5522 /* MenuEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEntity.swift; sourceTree = "<group>"; };
+		4E49F56D26625F30008C5522 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		4E49F56E26625F30008C5522 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		4E7F52812662374B00594C72 /* EventsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsHeaderView.swift; sourceTree = "<group>"; };
 		4E7F52832662375700594C72 /* EventsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsHeaderView.xib; sourceTree = "<group>"; };
+		4E8CD03626629CB100D40DDB /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +343,7 @@
 		4E3E128C265F4DB80004D9AD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4E49F55E26624754008C5522 /* Menu */,
 				4E0A582526620DEC005E59D1 /* Events */,
 				4E3E128D265F4DBF0004D9AD /* Home */,
 			);
@@ -461,6 +474,83 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
+		4E49F55E26624754008C5522 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				4E49F562266247BB008C5522 /* Entity */,
+				4E49F563266247C2008C5522 /* Interactor */,
+				4E49F561266247A3008C5522 /* Router */,
+				4E49F5602662479D008C5522 /* Presenter */,
+				4E49F55F26624789008C5522 /* View */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		4E49F55F26624789008C5522 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E49F56626624E62008C5522 /* MenuView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E49F5602662479D008C5522 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4E49F561266247A3008C5522 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4E8CD03626629CB100D40DDB /* MenuRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4E49F562266247BB008C5522 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4E49F56926624F18008C5522 /* MenuEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4E49F563266247C2008C5522 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4E49F56626624E62008C5522 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				4E49F56B26625EEE008C5522 /* Cells */,
+				4E49F56426624E58008C5522 /* MenuView.swift */,
+				4E49F56726624E70008C5522 /* MenuView.xib */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		4E49F56B26625EEE008C5522 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4E49F56C26625F16008C5522 /* MenuTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4E49F56C26625F16008C5522 /* MenuTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E49F56D26625F30008C5522 /* MenuTableViewCell.swift */,
+				4E49F56E26625F30008C5522 /* MenuTableViewCell.xib */,
+			);
+			path = MenuTableViewCell;
+			sourceTree = "<group>";
+		};
 		4E7F52802662369400594C72 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,12 +648,14 @@
 				4E3E12B3265F9C310004D9AD /* FeatureTableViewCell.xib in Resources */,
 				4E3E1272265F4D960004D9AD /* Main.storyboard in Resources */,
 				4E7F52842662375700594C72 /* EventsHeaderView.xib in Resources */,
+				4E49F56826624E70008C5522 /* MenuView.xib in Resources */,
 				4E3E12B9265F9D7A0004D9AD /* FeatureCollectionViewViewCell.xib in Resources */,
 				4E17FFB3265FB1F90013FEB1 /* NormalCollectionViewCell.xib in Resources */,
 				4E0A580526600CE3005E59D1 /* HomeHeaderView.xib in Resources */,
 				4E0A57FE265FBF22005E59D1 /* TagCollectionViewCell.xib in Resources */,
 				4E1D49B42662204700D416A1 /* EventsTableViewCell.xib in Resources */,
 				4E17FFAE265FB08B0013FEB1 /* NormalTableViewCell.xib in Resources */,
+				4E49F57026625F30008C5522 /* MenuTableViewCell.xib in Resources */,
 				4E3E1297265F4E150004D9AD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,12 +681,14 @@
 				4E7F52822662374B00594C72 /* EventsHeaderView.swift in Sources */,
 				4E3E12BB265F9E6B0004D9AD /* UICollectionView+Extensions.swift in Sources */,
 				4E3E126B265F4D960004D9AD /* AppDelegate.swift in Sources */,
+				4E49F56526624E58008C5522 /* MenuView.swift in Sources */,
 				4E0A57FD265FBF22005E59D1 /* TagCollectionViewCell.swift in Sources */,
 				4E3E12B2265F9C310004D9AD /* FeatureTableViewCell.swift in Sources */,
 				4E0A583126621117005E59D1 /* EventsViewController.swift in Sources */,
 				4E0A580A26600E9A005E59D1 /* EventContainerTableViewCell.swift in Sources */,
 				4E3E12AA265F7C310004D9AD /* UITableView+Extensions.swift in Sources */,
 				4E3E12A2265F53130004D9AD /* APIManager.swift in Sources */,
+				4E49F56F26625F30008C5522 /* MenuTableViewCell.swift in Sources */,
 				4E1D49B32662204700D416A1 /* EventsTableViewCell.swift in Sources */,
 				4E3E129B265F4F0B0004D9AD /* HomePresenter.swift in Sources */,
 				4E3E126D265F4D960004D9AD /* SceneDelegate.swift in Sources */,
@@ -603,10 +697,12 @@
 				4E0A5834266213DB005E59D1 /* EventsRouter.swift in Sources */,
 				4E0A5838266214DB005E59D1 /* EventsInteractor.swift in Sources */,
 				4E3E129F265F4F7C0004D9AD /* HomeRouter.swift in Sources */,
+				4E49F56A26624F18008C5522 /* MenuEntity.swift in Sources */,
 				4E17FFAD265FB08B0013FEB1 /* NormalTableViewCell.swift in Sources */,
 				4E3E12BF265FA5E50004D9AD /* ImageCachingManager.swift in Sources */,
 				4E3E12C1265FA64B0004D9AD /* UIImageView+Extensions.swift in Sources */,
 				4E1D49AF266217E400D416A1 /* EventsEntity.swift in Sources */,
+				4E8CD03726629CB100D40DDB /* MenuRouter.swift in Sources */,
 				4E3E12AB265F7C310004D9AD /* UITableViewCell+Extensions.swift in Sources */,
 				4E17FFB7265FB34E0013FEB1 /* CenterCollectionViewFlowLayout.swift in Sources */,
 				4E3E12B8265F9D7A0004D9AD /* FeatureCollectionViewViewCell.swift in Sources */,
