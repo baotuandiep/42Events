@@ -37,7 +37,6 @@ class EventsTableViewCell: UITableViewCell {
         layoutIfNeeded()
         collectionViewHeightCoinstraint.constant = collectionView.contentSize.height
         layoutIfNeeded()
-        print(frame.height)
     }
 }
 

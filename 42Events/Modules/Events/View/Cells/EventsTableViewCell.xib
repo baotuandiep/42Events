@@ -75,8 +75,8 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="8Co-Bf-a9g" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0jg-X5-qD2"/>
                     <constraint firstItem="8Co-Bf-a9g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="35U-tR-xpb"/>
+                    <constraint firstAttribute="bottom" secondItem="8Co-Bf-a9g" secondAttribute="bottom" priority="750" constant="15" id="JUr-Wq-cKn"/>
                     <constraint firstItem="8Co-Bf-a9g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dYr-1V-reP"/>
                     <constraint firstItem="8Co-Bf-a9g" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="nOJ-YN-StE"/>
                 </constraints>
