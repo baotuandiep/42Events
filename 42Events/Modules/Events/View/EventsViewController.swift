@@ -13,7 +13,7 @@ class EventsViewController: UIViewController {
     var presenter: EventsViewToPresenterProtocol?
     var datas: [EventModel] = []
     var header: EventsHeaderView?
-    var isShowMedal = true
+    var isShowMedal = false
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -51,7 +51,9 @@ extension EventsViewController: UITableViewDelegate {
             header = view
             view.titleLabel.text = "\(datas.count) events"
             view.switchChangeValue = { [weak self] in
-                self?.isShowMedal = $0
+                guard let self = self else { return }
+                self.isShowMedal = $0
+                self.presenter?.isShowMedalChangedValue(isShowMedal: $0, tableView: self.tableView)
             }
             return view
         }

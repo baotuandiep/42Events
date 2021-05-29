@@ -6,13 +6,14 @@
 //  Copyright © 2021 Tuan Diep. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol EventsViewToPresenterProtocol: class {
     var view: EventsPresenterToViewProtocol? { get set }
     var interactor: EventsPresenterToInteractorProtocol? { get set }
     var router: EventsPresenterToRouterProtocol? { get set }
     func loadData()
+    func isShowMedalChangedValue(isShowMedal: Bool, tableView: UITableView)
 }
 
 protocol EventsPresenterToViewProtocol: class {
