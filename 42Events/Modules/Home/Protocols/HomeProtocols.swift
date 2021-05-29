@@ -13,6 +13,7 @@ protocol HomeViewToPresenterProtocol: class {
     var interactor: HomePresenterToInteractorProtocol? { get set }
     var router: HomePresenterToRouterProtocol? { get set }
     func loadData()
+    func touchedOnEvent(navigationController: UINavigationController, eventType: EventsType)
 }
 
 protocol HomePresenterToViewProtocol: class {
@@ -20,7 +21,7 @@ protocol HomePresenterToViewProtocol: class {
 }
 
 protocol HomePresenterToRouterProtocol: class {
-    func pushToEventScreen(navigationController: UINavigationController, eventType: String)
+    func pushToEventScreen(navigationController: UINavigationController, eventType: EventsType)
 }
 
 protocol HomePresenterToInteractorProtocol: class {

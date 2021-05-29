@@ -1,5 +1,5 @@
 //
-//  EventTableViewCell.swift
+//  EventContainerTableViewCell.swift
 //  42Events
 //
 //  Created by Tuan Diep on 5/28/21.
@@ -8,13 +8,21 @@
 
 import UIKit
 
-class EventTableViewCell: UITableViewCell {
+class EventContainerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var stackView: UIStackView!
+
+    var touchedOnEvent: ((EventsType) -> Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         stackView.subviews.forEach {
             $0.layer.cornerRadius = 10
         }
+    }
+
+    @IBAction func eventsButtonTouch(_ sender: UIButton) {
+        guard EventsType.allCases.count > sender.tag else { return }
+        touchedOnEvent?(EventsType.allCases[sender.tag])
     }
 }

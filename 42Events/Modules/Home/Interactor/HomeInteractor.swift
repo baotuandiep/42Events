@@ -21,7 +21,6 @@ extension HomeInteractor {
         APIManager.shared.loadData(type: HomeModel.self, path: "race-events", queryParams: [:]) { [weak self] in
             switch $0 {
             case .success(let model):
-                print(model.code)
                 self?.presenter?.receiveData(data: model.data)
             case .error(let error):
                 print(error)

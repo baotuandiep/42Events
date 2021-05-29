@@ -50,11 +50,11 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Event"
+        title = "Events"
         presenter?.loadData()
         tableView.registerFromNib(forCellClass: FeatureTableViewCell.self)
         tableView.registerFromNib(forCellClass: NormalTableViewCell.self)
-        tableView.registerFromNib(forCellClass: EventTableViewCell.self)
+        tableView.registerFromNib(forCellClass: EventContainerTableViewCell.self)
     }
 }
 
@@ -75,7 +75,12 @@ extension HomeViewController: UITableViewDataSource {
             cell.setData(datas: data.featured)
             return cell
         case .events:
-            let cell = tableView.dequeueReusableCell(type: EventTableViewCell.self, for: indexPath)
+            let cell = tableView.dequeueReusableCell(type: EventContainerTableViewCell.self, for: indexPath)
+            cell.touchedOnEvent = { [weak self] eventType in
+                print(eventType)
+                guard let navigationController = self?.navigationController else { return }
+                self?.presenter?.touchedOnEvent(navigationController: navigationController, eventType: eventType)
+            }
             return cell
         default:
             let cell = tableView.dequeueReusableCell(type: NormalTableViewCell.self, for: indexPath)

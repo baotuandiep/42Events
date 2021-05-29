@@ -9,9 +9,9 @@
 import UIKit
 
 class EventsRouter: EventsPresenterToRouterProtocol {
-    static func createModule(eventType: String) -> EventsViewController {
+    static func createModule(eventType: EventsType) -> EventsViewController {
         let viewController = EventsViewController()
-        let presenter = EventsPresenter()
+        let presenter = EventsPresenter(eventType: eventType)
         let interactor = EventsInteractor()
         let router = EventsRouter()
 

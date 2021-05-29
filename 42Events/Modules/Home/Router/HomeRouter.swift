@@ -25,7 +25,7 @@ class HomeRouter: HomePresenterToRouterProtocol {
         return navigationController
     }
 
-    func pushToEventScreen(navigationController: UINavigationController, eventType: String) {
+    func pushToEventScreen(navigationController: UINavigationController, eventType: EventsType) {
         let eventsModule = EventsRouter.createModule(eventType: eventType)
         navigationController.pushViewController(eventsModule, animated: true)
     }

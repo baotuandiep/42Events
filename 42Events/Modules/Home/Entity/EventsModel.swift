@@ -8,12 +8,11 @@
 
 import Foundation
 
-struct HomeModel: Decodable {
-    var code: Int
+struct HomeModel: Codable {
     var data: HomeDataModel
 }
 
-struct HomeDataModel: Decodable {
+struct HomeDataModel: Codable {
     var featured: [EventModel]
     var startingSoon: [EventModel]
     var popular: [EventModel]
@@ -22,7 +21,7 @@ struct HomeDataModel: Decodable {
     var past: [EventModel]
 }
 
-struct EventModel: Decodable {
+struct EventModel: Codable {
     var _id: String
     var raceIDs: [String]
     var slug: String

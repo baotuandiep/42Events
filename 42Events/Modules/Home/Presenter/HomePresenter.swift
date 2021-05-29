@@ -6,7 +6,7 @@
 //  Copyright © 2021 Tuan Diep. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class HomePresenter {
     weak var view: HomePresenterToViewProtocol?
@@ -17,6 +17,10 @@ class HomePresenter {
 extension HomePresenter: HomeViewToPresenterProtocol {
     func loadData() {
         interactor?.loadData()
+    }
+
+    func touchedOnEvent(navigationController: UINavigationController, eventType: EventsType) {
+        router?.pushToEventScreen(navigationController: navigationController, eventType: eventType)
     }
 }
 
