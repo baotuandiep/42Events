@@ -39,7 +39,7 @@ enum HomeSection: Int, CaseIterable {
 
 class HomeViewController: UIViewController {
 
-    var presentor: HomeViewToPresenterProtocol?
+    var presenter: HomeViewToPresenterProtocol?
 
     @IBOutlet weak var tableView: UITableView!
     var data: HomeDataModel?
@@ -51,7 +51,7 @@ extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Event"
-        presentor?.loadData()
+        presenter?.loadData()
         tableView.registerFromNib(forCellClass: FeatureTableViewCell.self)
         tableView.registerFromNib(forCellClass: NormalTableViewCell.self)
         tableView.registerFromNib(forCellClass: EventTableViewCell.self)

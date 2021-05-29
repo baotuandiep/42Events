@@ -15,7 +15,7 @@ class HomeRouter: HomePresenterToRouterProtocol {
         let interactor = HomeInteractor()
         let router = HomeRouter()
 
-        viewController.presentor = presenter
+        viewController.presenter = presenter
         presenter.view = viewController
         presenter.router = router
         presenter.interactor = interactor
@@ -23,5 +23,10 @@ class HomeRouter: HomePresenterToRouterProtocol {
 
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
+    }
+
+    func pushToEventScreen(navigationController: UINavigationController, eventType: String) {
+        let eventsModule = EventsRouter.createModule(eventType: eventType)
+        navigationController.pushViewController(eventsModule, animated: true)
     }
 }

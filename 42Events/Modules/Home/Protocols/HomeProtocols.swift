@@ -20,7 +20,7 @@ protocol HomePresenterToViewProtocol: class {
 }
 
 protocol HomePresenterToRouterProtocol: class {
-
+    func pushToEventScreen(navigationController: UINavigationController, eventType: String)
 }
 
 protocol HomePresenterToInteractorProtocol: class {
