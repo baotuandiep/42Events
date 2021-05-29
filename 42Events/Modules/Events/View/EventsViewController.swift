@@ -12,7 +12,8 @@ class EventsViewController: UIViewController {
 
     var presenter: EventsViewToPresenterProtocol?
     var datas: [EventModel] = []
-
+    var header: EventsHeaderView?
+    var isShowMedal = false
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -39,6 +40,25 @@ extension EventsViewController: UITableViewDataSource {
 extension EventsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let header = header {
+            header.titleLabel.text = "\(datas.count) events"
+            return header
+        } else {
+            let view = EventsHeaderView.instantiate()
+            header = view
+            view.titleLabel.text = "\(datas.count) events"
+            view.switchChangeValue = { [weak self] in
+                self?.isShowMedal = $0
+            }
+            return view
+        }
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        50
     }
 }
 

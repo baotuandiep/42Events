@@ -25,7 +25,7 @@ class EventsTableViewCell: UITableViewCell {
         titleImageView.layer.cornerRadius = 10
     }
 
-    func configureData(data: EventModel) {
+    func configureData(data: EventModel, isShowMedal: Bool) {
         guard self.data?._id != data._id else { return }
         self.data = data
         dateLabel.text = data.racePeriod
