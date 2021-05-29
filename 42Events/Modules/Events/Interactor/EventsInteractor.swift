@@ -25,7 +25,6 @@ extension EventsInteractor: EventsPresenterToInteractorProtocol {
             switch $0 {
             case .success(let model):
                 self?.presenter?.receiveData(datas: model.data)
-                print(model)
             case .error(let error):
                 print(error)
             }

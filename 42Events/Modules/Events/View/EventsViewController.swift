@@ -19,7 +19,7 @@ class EventsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.loadData()
-        // Do any additional setup after loading the view.
+        tableView.registerFromNib(forCellClass: EventsTableViewCell.self)
     }
 
 }
@@ -30,12 +30,25 @@ extension EventsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(type: EventsTableViewCell.self, for: indexPath)
+        cell.configureData(data: datas[indexPath.row])
+        return cell
+    }
+}
+
+extension EventsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        500
     }
 }
 
 extension EventsViewController: EventsPresenterToViewProtocol {
     func receiveData(datas: [EventModel]) {
         self.datas = datas
+        tableView.reloadData()
     }
 }
