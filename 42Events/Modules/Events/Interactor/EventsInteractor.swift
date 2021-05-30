@@ -12,8 +12,12 @@ class EventsInteractor {
     weak var presenter: EventsInteractorToPresenterProtocol?
 
     let path = "race-filters"
+    var pathUserDefaultString: String {
+        path + eventType.rawValue
+    }
     var dataCachingManager: DataCachingManager
     var eventType: EventsType
+    var apiManager = APIManager.shared
 
     private var expirationTime: Double = 3600 // 1 hour
 
@@ -25,7 +29,7 @@ class EventsInteractor {
 
 extension EventsInteractor: EventsPresenterToInteractorProtocol {
     func loadData() {
-        let savedTimestamp = UserDefaults.standard.double(forKey: path + eventType.rawValue)
+        let savedTimestamp = UserDefaults.standard.double(forKey: pathUserDefaultString)
         if Date().timeIntervalSince1970 - savedTimestamp < expirationTime,
             let model = dataCachingManager.loadCachingData(type: EventsModel.self) {
             presenter?.receiveData(datas: model.data)
@@ -42,7 +46,7 @@ extension EventsInteractor {
             "limit": 10,
             "sportType": eventType.rawValue
         ]
-        APIManager.shared.loadData(type: EventsModel.self, path: path, queryParams: queryParams) { [weak self] in
+        apiManager.loadData(type: EventsModel.self, path: path, queryParams: queryParams) { [weak self] in
             guard let self = self else { return }
             switch $0 {
             case .success(let model):
@@ -50,7 +54,7 @@ extension EventsInteractor {
                 DispatchQueue.global(qos: .background).async { [weak self] in
                     self?.dataCachingManager.saveCachingData(model: model)
                 }
-                UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: self.path + self.eventType.rawValue)
+                UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: self.pathUserDefaultString)
             case .error(let error):
                 self.presenter?.receiveError(error: error)
             }
