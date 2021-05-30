@@ -35,7 +35,7 @@ extension MenuView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: MenuTableViewCell.self, for: indexPath)
-        cell.configure(menu: MenuRows.allCases[indexPath.row], languageString: languages[selectedIndex  ])
+        cell.configure(menu: MenuRows.allCases[indexPath.row], languageString: languages[selectedIndex ])
         return cell
     }
 }
@@ -71,7 +71,6 @@ extension MenuView: UITableViewDelegate {
         }
 
         languageView.onSelectedIndex = { [weak self] index in
-//            guard let self = self else { return }
             let indexPath = IndexPath(row: MenuRows.language.rawValue, section: 0)
             self?.selectedIndex = index
             self?.presenter?.selectLanguage(index: index)
