@@ -21,6 +21,14 @@ class EventsViewController: UIViewController {
         super.viewDidLoad()
         presenter?.loadData()
         tableView.registerFromNib(forCellClass: EventsTableViewCell.self)
+
+        let rightItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(rightItemTapped))
+        rightItem.tintColor = .label
+        navigationItem.rightBarButtonItem = rightItem
+    }
+
+    @objc func rightItemTapped() {
+        MenuRouter.createModule(on: self.view)
     }
 
 }

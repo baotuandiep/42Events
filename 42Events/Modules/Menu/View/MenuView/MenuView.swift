@@ -15,11 +15,11 @@ class MenuView: UIView {
 
     @IBOutlet weak var tableView: UITableView!
     var presenter: MenuViewToPresenterProtocol?
+    var languages: [String] = []
+    var selectedIndex = 0
 
     var topConstraint: NSLayoutConstraint?
     var leadingConstraint: NSLayoutConstraint?
-//    var widthConstraint: NSLayoutConstraint?
-//    var heightConstraint: NSLayoutConstraint?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +35,7 @@ extension MenuView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: MenuTableViewCell.self, for: indexPath)
-//        cell.configureData(data: datas[indexPath.row], isShowMedal: isShowMedal)
-        cell.configure(menu: MenuRows.allCases[indexPath.row], languageString: "English")
+        cell.configure(menu: MenuRows.allCases[indexPath.row], languageString: languages[selectedIndex  ])
         return cell
     }
 }
@@ -64,11 +63,19 @@ extension MenuView: UITableViewDelegate {
         languageView.leadingTableViewConstraint.constant = frame.origin.x - 15
         languageView.topConstraint.constant = frame.origin.y + cell.valueLabel.frame.height + 5
         layoutIfNeeded()
-        let languages = ["English", "简体中文", "繁體中文", "Bahasa Indonesia", "ภาษาไทย", "Tiếng Việt"]
-        languageView.configure(languages: languages)
-        UIView.animate(withDuration: 0.3) {
-            languageView.heightConstraint.constant = CGFloat(languages.count) * 30
+        languageView.configure(languages: languages, selectedIndex: selectedIndex)
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let self = self else { return }
+            languageView.heightConstraint.constant = CGFloat(self.languages.count) * 30
             languageView.layoutIfNeeded()
+        }
+
+        languageView.onSelectedIndex = { [weak self] index in
+//            guard let self = self else { return }
+            let indexPath = IndexPath(row: MenuRows.language.rawValue, section: 0)
+            self?.selectedIndex = index
+            self?.presenter?.selectLanguage(index: index)
+            self?.tableView.reloadRows(at: [indexPath], with: .none)
         }
 
         languageView.close = {
@@ -114,5 +121,10 @@ extension MenuView: MenuPresenterToViewProtocol {
         }, completion: { [weak self] _ in
             self?.removeFromSuperview()
         })
+    }
+
+    func languageList(languages: [String], selectedIndex: Int) {
+        self.languages = languages
+        self.selectedIndex = selectedIndex
     }
 }

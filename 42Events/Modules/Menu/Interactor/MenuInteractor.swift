@@ -9,10 +9,17 @@
 import Foundation
 
 class MenuInteractor {
-    var listLanguage: [String] = ["English", "简体中文", "繁體中文", "Bahasa Indonesia", "ภาษาไทย", "Tiếng Việt"]
+    static var selectedIndex = 0
+    var languagueList: [String] = ["English", "简体中文", "繁體中文", "Bahasa Indonesia", "ภาษาไทย", "Tiếng Việt"]
     weak var presenter: MenuInteractorToPresenterProtocol?
 }
 
 extension MenuInteractor: MenuPresenterToInteractorProtocol {
+    func getLanguageList() {
+        presenter?.languagueList(languages: languagueList, selectedIndex: Self.selectedIndex)
+    }
 
+    func selectLanguage(index: Int) {
+        Self.selectedIndex = index
+    }
 }

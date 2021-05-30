@@ -24,12 +24,12 @@ class MenuRouter: MenuPresenterToRouterProtocol {
             let presenter = MenuPresenter()
             let interactor = MenuInteractor()
             let router = MenuRouter()
-
             menuView.presenter = presenter
             presenter.view = menuView
             presenter.router = router
             presenter.interactor = interactor
             interactor.presenter = presenter
+            presenter.getLanguageList()
 
             presenter.showView(superview: view)
             return menuView

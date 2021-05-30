@@ -15,11 +15,19 @@ class MenuPresenter {
 }
 
 extension MenuPresenter: MenuViewToPresenterProtocol {
+    func getLanguageList() {
+        interactor?.getLanguageList()
+    }
 
+    func selectLanguage(index: Int) {
+        interactor?.selectLanguage(index: index)
+    }
 }
 
 extension MenuPresenter: MenuInteractorToPresenterProtocol {
-
+    func languagueList(languages: [String], selectedIndex: Int) {
+        view?.languageList(languages: languages, selectedIndex: selectedIndex)
+    }
 }
 
 extension MenuPresenter {

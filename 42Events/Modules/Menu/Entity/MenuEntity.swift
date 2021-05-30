@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum MenuRows: CaseIterable {
+enum MenuRows: Int, CaseIterable {
     case login
     case signUp
     case guidesAndFAQ

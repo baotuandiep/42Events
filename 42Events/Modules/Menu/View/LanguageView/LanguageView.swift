@@ -21,8 +21,10 @@ class LanguageView: UIView {
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 
     var close: (() -> Void)?
+    var onSelectedIndex: ((Int) -> Void)?
 
     var languages: [String] = []
+    var selectedIndex: Int = 0
 
     override func awakeFromNib() {
         superview?.awakeFromNib()
@@ -32,8 +34,9 @@ class LanguageView: UIView {
         tableView.layer.borderWidth = 1
     }
 
-    func configure(languages: [String]) {
+    func configure(languages: [String], selectedIndex: Int) {
         self.languages = languages
+        self.selectedIndex = selectedIndex
         tableView.reloadData()
     }
 
@@ -50,6 +53,7 @@ extension LanguageView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: LanguageTableViewCell.self, for: indexPath)
         cell.languageLabel?.text = languages[indexPath.row]
+        cell.setSelected(indexPath.row == selectedIndex, animated: false)
         return cell
     }
 }
@@ -57,5 +61,11 @@ extension LanguageView: UITableViewDataSource {
 extension LanguageView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         30
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        onSelectedIndex?(selectedIndex)
+        close?()
     }
 }
