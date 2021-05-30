@@ -74,6 +74,7 @@
 		4ED7A83F26634B2D00D45B22 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A83E26634B2D00D45B22 /* HomeInteractorTests.swift */; };
 		4ED7A84226636E7500D45B22 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A84126636E7500D45B22 /* HomePresenterTests.swift */; };
 		4ED7A847266375EC00D45B22 /* EventsInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A846266375EC00D45B22 /* EventsInteractorTest.swift */; };
+		4ED7A84926637A8900D45B22 /* EventsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A84826637A8900D45B22 /* EventsPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		4ED7A83E26634B2D00D45B22 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		4ED7A84126636E7500D45B22 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		4ED7A846266375EC00D45B22 /* EventsInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsInteractorTest.swift; sourceTree = "<group>"; };
+		4ED7A84826637A8900D45B22 /* EventsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,6 +709,7 @@
 		4ED7A845266375C000D45B22 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4ED7A84826637A8900D45B22 /* EventsPresenterTest.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -877,6 +880,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ED7A8362663425B00D45B22 /* APIManagerTests.swift in Sources */,
+				4ED7A84926637A8900D45B22 /* EventsPresenterTest.swift in Sources */,
 				4ED7A83F26634B2D00D45B22 /* HomeInteractorTests.swift in Sources */,
 				4ED7A847266375EC00D45B22 /* EventsInteractorTest.swift in Sources */,
 				4ED7A83A266346D500D45B22 /* DataCachingManagerTests.swift in Sources */,
