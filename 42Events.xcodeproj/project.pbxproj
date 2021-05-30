@@ -69,6 +69,7 @@
 		4E7F52842662375700594C72 /* EventsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7F52832662375700594C72 /* EventsHeaderView.xib */; };
 		4E8CD03726629CB100D40DDB /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8CD03626629CB100D40DDB /* MenuRouter.swift */; };
 		4ED7A83126632D5100D45B22 /* DataCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A83026632D5100D45B22 /* DataCachingManager.swift */; };
+		4ED7A8362663425B00D45B22 /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A8352663425B00D45B22 /* APIManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		4E7F52832662375700594C72 /* EventsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsHeaderView.xib; sourceTree = "<group>"; };
 		4E8CD03626629CB100D40DDB /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		4ED7A83026632D5100D45B22 /* DataCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCachingManager.swift; sourceTree = "<group>"; };
+		4ED7A8352663425B00D45B22 /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 		4E3E1280265F4D970004D9AD /* 42EventsTests */ = {
 			isa = PBXGroup;
 			children = (
+				4ED7A8322663422C00D45B22 /* Utils */,
 				4E3E1281265F4D970004D9AD /* _2EventsTests.swift */,
 				4E3E1283265F4D970004D9AD /* Info.plist */,
 			);
@@ -433,11 +436,9 @@
 		4E3E12A0265F52FF0004D9AD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4ED7A8332663423600D45B22 /* Managers */,
 				4E17FFB4265FB3210013FEB1 /* Views */,
 				4E3E12A5265F7C310004D9AD /* Extensions */,
-				4E3E12A1265F53130004D9AD /* APIManager.swift */,
-				4E3E12BE265FA5E50004D9AD /* ImageCachingManager.swift */,
-				4ED7A83026632D5100D45B22 /* DataCachingManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -616,6 +617,32 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		4ED7A8322663422C00D45B22 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4ED7A8342663424500D45B22 /* Managers */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4ED7A8332663423600D45B22 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E12A1265F53130004D9AD /* APIManager.swift */,
+				4E3E12BE265FA5E50004D9AD /* ImageCachingManager.swift */,
+				4ED7A83026632D5100D45B22 /* DataCachingManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		4ED7A8342663424500D45B22 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4ED7A8352663425B00D45B22 /* APIManagerTests.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -782,6 +809,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ED7A8362663425B00D45B22 /* APIManagerTests.swift in Sources */,
 				4E3E1282265F4D970004D9AD /* _2EventsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
