@@ -71,6 +71,7 @@
 		4ED7A83126632D5100D45B22 /* DataCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A83026632D5100D45B22 /* DataCachingManager.swift */; };
 		4ED7A8362663425B00D45B22 /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A8352663425B00D45B22 /* APIManagerTests.swift */; };
 		4ED7A838266345C500D45B22 /* ImageCachingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A837266345C500D45B22 /* ImageCachingManagerTests.swift */; };
+		4ED7A83A266346D500D45B22 /* DataCachingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7A839266346D500D45B22 /* DataCachingManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		4ED7A83026632D5100D45B22 /* DataCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCachingManager.swift; sourceTree = "<group>"; };
 		4ED7A8352663425B00D45B22 /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		4ED7A837266345C500D45B22 /* ImageCachingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCachingManagerTests.swift; sourceTree = "<group>"; };
+		4ED7A839266346D500D45B22 /* DataCachingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCachingManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -642,6 +644,7 @@
 			children = (
 				4ED7A8352663425B00D45B22 /* APIManagerTests.swift */,
 				4ED7A837266345C500D45B22 /* ImageCachingManagerTests.swift */,
+				4ED7A839266346D500D45B22 /* DataCachingManagerTests.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ED7A8362663425B00D45B22 /* APIManagerTests.swift in Sources */,
+				4ED7A83A266346D500D45B22 /* DataCachingManagerTests.swift in Sources */,
 				4ED7A838266345C500D45B22 /* ImageCachingManagerTests.swift in Sources */,
 				4E3E1282265F4D970004D9AD /* _2EventsTests.swift in Sources */,
 			);
