@@ -25,7 +25,7 @@ enum ErrorType {
         case .serverError:
             return "Somethings wrong with our server"
         case .noData:
-            return "No data"
+            return "Sorry! There is no result!"
         case .unknow:
             return "Unknow error"
         case .requestError(let string):

@@ -16,6 +16,7 @@ class HomePresenter {
 
 extension HomePresenter: HomeViewToPresenterProtocol {
     func loadData() {
+        view?.showLoadingView()
         interactor?.loadData()
     }
 
@@ -32,6 +33,12 @@ extension HomePresenter: HomeInteractorToPresenterProtocol {
     func receiveData(data: HomeDataModel) {
         DispatchQueue.main.async { [weak self] in
             self?.view?.receiveData(data: data)
+        }
+    }
+
+    func receiveError(error: ErrorType) {
+        DispatchQueue.main.async { [weak self] in
+            self?.view?.showErrorView(errorString: error.value)
         }
     }
 }

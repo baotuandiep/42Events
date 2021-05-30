@@ -42,8 +42,16 @@ class HomeViewController: UIViewController {
     var presenter: HomeViewToPresenterProtocol?
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var errorView: UIView!
+
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
     var data: HomeDataModel?
     var contentXOffset: [Int: CGFloat] = [:]
+
+    @IBAction func retryTouched(_ sender: UIButton) {
+        presenter?.loadData()
+    }
 }
 
 // MARK: - View Controller Lifecycle
@@ -137,6 +145,18 @@ extension HomeViewController: HomePresenterToViewProtocol {
     func receiveData(data: HomeDataModel) {
         guard self.data == nil else { return }
         self.data = data
+        errorView.isHidden = true
+        loadingView.isHidden = true
         tableView.reloadData()
+    }
+
+    func showErrorView(errorString: String) {
+        errorView.isHidden = false
+        loadingView.isHidden = true
+        errorLabel.text = errorString
+    }
+
+    func showLoadingView() {
+        loadingView.isHidden = false
     }
 }

@@ -19,6 +19,8 @@ protocol HomeViewToPresenterProtocol: class {
 
 protocol HomePresenterToViewProtocol: class {
     func receiveData(data: HomeDataModel)
+    func showErrorView(errorString: String)
+    func showLoadingView()
 }
 
 protocol HomePresenterToRouterProtocol: class {
@@ -33,4 +35,5 @@ protocol HomePresenterToInteractorProtocol: class {
 
 protocol HomeInteractorToPresenterProtocol: class {
     func receiveData(data: HomeDataModel)
+    func receiveError(error: ErrorType)
 }

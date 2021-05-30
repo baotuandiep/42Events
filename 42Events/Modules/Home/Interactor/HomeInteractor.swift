@@ -44,7 +44,7 @@ extension HomeInteractor {
                 }
                 UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: self.path)
             case .error(let error):
-                print(error)
+                self.presenter?.receiveError(error: error)
             }
         }
     }
