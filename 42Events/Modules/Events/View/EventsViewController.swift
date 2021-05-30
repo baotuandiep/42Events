@@ -15,6 +15,9 @@ class EventsViewController: UIViewController {
     var header: EventsHeaderView?
     var isShowMedal = false
 
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -31,6 +34,9 @@ class EventsViewController: UIViewController {
         MenuRouter.createModule(on: self.view)
     }
 
+    @IBAction func retryButtonTouched(_ sender: UIButton) {
+        presenter?.loadData()
+    }
 }
 
 extension EventsViewController: UITableViewDataSource {
@@ -73,7 +79,19 @@ extension EventsViewController: UITableViewDelegate {
 }
 
 extension EventsViewController: EventsPresenterToViewProtocol {
+    func showErrorView(errorString: String) {
+        errorView.isHidden = false
+        loadingView.isHidden = true
+        errorLabel.text = errorString
+    }
+
+    func showLoadingView() {
+        errorView.isHidden = true
+        loadingView.isHidden = false
+    }
+
     func receiveData(datas: [EventModel]) {
+        loadingView.isHidden = true
         self.datas = datas
         tableView.reloadData()
     }

@@ -52,7 +52,7 @@ extension EventsInteractor {
                 }
                 UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: self.path + self.eventType.rawValue)
             case .error(let error):
-                print(error)
+                self.presenter?.receiveError(error: error)
             }
         }
     }

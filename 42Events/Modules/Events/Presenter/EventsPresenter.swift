@@ -21,6 +21,7 @@ class EventsPresenter {
 
 extension EventsPresenter: EventsViewToPresenterProtocol {
     func loadData() {
+        view?.showLoadingView()
         (view as? UIViewController)?.title = eventType.rawValue.capitalized
         interactor?.loadData()
     }
@@ -45,6 +46,12 @@ extension EventsPresenter: EventsInteractorToPresenterProtocol {
     func receiveData(datas: [EventModel]) {
         DispatchQueue.main.async { [weak self] in
             self?.view?.receiveData(datas: datas)
+        }
+    }
+
+    func receiveError(error: ErrorType) {
+        DispatchQueue.main.async { [weak self] in
+            self?.view?.showErrorView(errorString: error.value)
         }
     }
 }

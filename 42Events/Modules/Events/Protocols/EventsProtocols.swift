@@ -19,6 +19,8 @@ protocol EventsViewToPresenterProtocol: class {
 
 protocol EventsPresenterToViewProtocol: class {
     func receiveData(datas: [EventModel])
+    func showErrorView(errorString: String)
+    func showLoadingView()
 }
 
 protocol EventsPresenterToRouterProtocol: class {
@@ -32,4 +34,5 @@ protocol EventsPresenterToInteractorProtocol: class {
 
 protocol EventsInteractorToPresenterProtocol: class {
     func receiveData(datas: [EventModel])
+    func receiveError(error: ErrorType)
 }
