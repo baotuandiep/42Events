@@ -53,13 +53,33 @@
                             <outlet property="delegate" destination="gTV-IL-0wX" id="T2x-OS-Ujt"/>
                         </connections>
                     </collectionView>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9X0-zf-1tq">
+                        <rect key="frame" x="384" y="10" width="166" height="24.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FREE MEDAL ENGRAVING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp6-kw-0pP">
+                                <rect key="frame" x="10" y="5" width="146" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Qp6-kw-0pP" secondAttribute="trailing" constant="10" id="GF2-EX-NAe"/>
+                            <constraint firstItem="Qp6-kw-0pP" firstAttribute="leading" secondItem="9X0-zf-1tq" secondAttribute="leading" constant="10" id="GeJ-S9-aY2"/>
+                            <constraint firstItem="Qp6-kw-0pP" firstAttribute="top" secondItem="9X0-zf-1tq" secondAttribute="top" constant="5" id="ZVT-2V-2R5"/>
+                            <constraint firstAttribute="bottom" secondItem="Qp6-kw-0pP" secondAttribute="bottom" constant="5" id="y6A-cr-HnA"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="9X0-zf-1tq" firstAttribute="top" secondItem="fLS-W8-sG5" secondAttribute="top" constant="10" id="1mp-Zn-la5"/>
                 <constraint firstItem="fLS-W8-sG5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2Z2-6G-Nry"/>
                 <constraint firstItem="fLS-W8-sG5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="64B-14-O8J"/>
                 <constraint firstAttribute="trailing" secondItem="aYf-ry-Tcq" secondAttribute="trailing" id="E6R-8Z-TWq"/>
                 <constraint firstItem="aYf-ry-Tcq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ol0-Fm-JDB"/>
+                <constraint firstItem="fLS-W8-sG5" firstAttribute="trailing" secondItem="9X0-zf-1tq" secondAttribute="trailing" constant="10" id="YOa-d2-qaC"/>
                 <constraint firstAttribute="bottom" secondItem="pFl-LK-jLX" secondAttribute="bottom" id="Zlj-TV-BnS"/>
                 <constraint firstAttribute="trailing" secondItem="pFl-LK-jLX" secondAttribute="trailing" id="gNM-ML-j30"/>
                 <constraint firstItem="pFl-LK-jLX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gfQ-VG-K0J"/>
@@ -72,6 +92,7 @@
             <connections>
                 <outlet property="collectionView" destination="pFl-LK-jLX" id="SIl-nS-y7B"/>
                 <outlet property="dateLabel" destination="JT3-wF-aBf" id="vcd-dW-cl7"/>
+                <outlet property="freeMedalView" destination="9X0-zf-1tq" id="VJH-aT-QYw"/>
                 <outlet property="titleImageView" destination="fLS-W8-sG5" id="GBW-7Y-oXg"/>
                 <outlet property="titleLabel" destination="upj-HX-LrC" id="7Cz-Tu-NfT"/>
             </connections>

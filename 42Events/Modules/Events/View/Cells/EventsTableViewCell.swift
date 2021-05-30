@@ -24,7 +24,7 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet weak var medalDetailLabel: UILabel!
     @IBOutlet weak var medalCategogiesLabel: UILabel!
     @IBOutlet weak var medalTypeLabel: UILabel!
-
+    @IBOutlet weak var freeMedalView: UIView!
 
     var data: EventModel?
 
@@ -34,6 +34,7 @@ class EventsTableViewCell: UITableViewCell {
         collectionView.registerFromNib(forCellClass: TagCollectionViewCell.self)
         titleImageView.layer.cornerRadius = 10
         medalImageView.layer.cornerRadius = 10
+        freeMedalView.layer.cornerRadius = freeMedalView.frame.height / 2
     }
 
     func configureData(data: EventModel, isShowMedal: Bool) {
@@ -53,6 +54,7 @@ class EventsTableViewCell: UITableViewCell {
                 medalImageView.downloadImage(url: url)
             }
         } else {
+            freeMedalView.isHidden = !data.isFreeEngraving
             dateLabel.text = data.racePeriod
             titleLabel.text = data.raceName
             if let url = URL(string: data.bannerCard) {

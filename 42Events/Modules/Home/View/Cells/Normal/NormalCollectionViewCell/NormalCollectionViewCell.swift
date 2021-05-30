@@ -14,7 +14,8 @@ class NormalCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var freeMedalView: UIView!
+    
     var data: EventModel?
 
     override func awakeFromNib() {
@@ -22,11 +23,13 @@ class NormalCollectionViewCell: UICollectionViewCell {
         collectionView.collectionViewLayout = LeftCollectionViewFlowLayout()
         collectionView.registerFromNib(forCellClass: TagCollectionViewCell.self)
         titleImageView.layer.cornerRadius = 10
+        freeMedalView.layer.cornerRadius = freeMedalView.frame.height / 2
     }
 
     func configureData(data: EventModel) {
         guard self.data?._id != data._id else { return }
         self.data = data
+        freeMedalView.isHidden = !data.isFreeEngraving
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
         dateLabel.text = data.racePeriod
