@@ -29,4 +29,8 @@ class HomeRouter: HomePresenterToRouterProtocol {
         let eventsModule = EventsRouter.createModule(eventType: eventType)
         navigationController.pushViewController(eventsModule, animated: true)
     }
+
+    func showMenu(view: UIView) {
+        MenuRouter.createModule(on: view)
+    }
 }

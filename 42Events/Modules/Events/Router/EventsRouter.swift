@@ -22,4 +22,8 @@ class EventsRouter: EventsPresenterToRouterProtocol {
         interactor.presenter = presenter
         return viewController
     }
+
+    func showMenu(view: UIView) {
+        MenuRouter.createModule(on: view)
+    }
 }

@@ -58,7 +58,6 @@
 		4E46B5E22662B25F00AF3160 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46B5E12662B25F00AF3160 /* MenuPresenter.swift */; };
 		4E46B5E42662B3B600AF3160 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46B5E32662B3B600AF3160 /* LanguageView.swift */; };
 		4E46B5E62662B3C600AF3160 /* LanguageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E46B5E52662B3C600AF3160 /* LanguageView.xib */; };
-		4E46B5E82662BC0A00AF3160 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46B5E72662BC0A00AF3160 /* UIView+Extensions.swift */; };
 		4E46B5ED2662BF9300AF3160 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46B5EB2662BF9300AF3160 /* LanguageTableViewCell.swift */; };
 		4E46B5EE2662BF9300AF3160 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E46B5EC2662BF9300AF3160 /* LanguageTableViewCell.xib */; };
 		4E49F56526624E58008C5522 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E49F56426624E58008C5522 /* MenuView.swift */; };
@@ -138,7 +137,6 @@
 		4E46B5E12662B25F00AF3160 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		4E46B5E32662B3B600AF3160 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		4E46B5E52662B3C600AF3160 /* LanguageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageView.xib; sourceTree = "<group>"; };
-		4E46B5E72662BC0A00AF3160 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		4E46B5EB2662BF9300AF3160 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		4E46B5EC2662BF9300AF3160 /* LanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageTableViewCell.xib; sourceTree = "<group>"; };
 		4E49F56426624E58008C5522 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -452,7 +450,6 @@
 				4E3E12BA265F9E6B0004D9AD /* UICollectionView+Extensions.swift */,
 				4E3E12BC265F9E930004D9AD /* UICollectionViewCell+Extensions.swift */,
 				4E3E12C0265FA64B0004D9AD /* UIImageView+Extensions.swift */,
-				4E46B5E72662BC0A00AF3160 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -735,7 +732,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E46B5E82662BC0A00AF3160 /* UIView+Extensions.swift in Sources */,
 				4E3E12BD265F9E940004D9AD /* UICollectionViewCell+Extensions.swift in Sources */,
 				4E3E126F265F4D960004D9AD /* ViewController.swift in Sources */,
 				4E3E1299265F4E5F0004D9AD /* HomeProtocols.swift in Sources */,

@@ -22,6 +22,10 @@ extension HomePresenter: HomeViewToPresenterProtocol {
     func touchedOnEvent(navigationController: UINavigationController, eventType: EventsType) {
         router?.pushToEventScreen(navigationController: navigationController, eventType: eventType)
     }
+
+    func showMenu(view: UIView) {
+        router?.showMenu(view: view)
+    }
 }
 
 extension HomePresenter: HomeInteractorToPresenterProtocol {

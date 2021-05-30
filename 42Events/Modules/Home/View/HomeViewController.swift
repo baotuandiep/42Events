@@ -63,7 +63,7 @@ extension HomeViewController {
     }
 
     @objc func rightItemTapped() {
-        MenuRouter.createModule(on: self.view)
+        presenter?.showMenu(view: view)
     }
 }
 

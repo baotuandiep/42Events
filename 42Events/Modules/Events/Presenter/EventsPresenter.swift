@@ -35,6 +35,10 @@ extension EventsPresenter: EventsViewToPresenterProtocol {
         }
         tableView.reloadRows(at: indexPaths, with: .automatic)
     }
+
+    func showMenu(view: UIView) {
+        router?.showMenu(view: view)
+    }
 }
 
 extension EventsPresenter: EventsInteractorToPresenterProtocol {

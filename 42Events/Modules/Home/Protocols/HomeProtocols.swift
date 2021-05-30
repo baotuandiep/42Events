@@ -14,6 +14,7 @@ protocol HomeViewToPresenterProtocol: class {
     var router: HomePresenterToRouterProtocol? { get set }
     func loadData()
     func touchedOnEvent(navigationController: UINavigationController, eventType: EventsType)
+    func showMenu(view: UIView)
 }
 
 protocol HomePresenterToViewProtocol: class {
@@ -22,6 +23,7 @@ protocol HomePresenterToViewProtocol: class {
 
 protocol HomePresenterToRouterProtocol: class {
     func pushToEventScreen(navigationController: UINavigationController, eventType: EventsType)
+    func showMenu(view: UIView)
 }
 
 protocol HomePresenterToInteractorProtocol: class {

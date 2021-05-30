@@ -9,12 +9,8 @@
 import UIKit
 
 class MenuRouter: MenuPresenterToRouterProtocol {
+    @discardableResult
     static func createModule(on view: UIView) -> MenuView {
-//        let window = UIApplication.shared.connectedScenes.filter({$0.activationState == .foregroundActive})
-//        .map({$0 as? UIWindowScene})
-//        .compactMap({$0})
-//        .first?.windows
-//        .filter({$0.isKeyWindow}).first
         if let menuView = view.subviews.first(where: { $0 is MenuView }) as? MenuView {
             (menuView.presenter as? MenuPresenter)?.closeView()
             return menuView

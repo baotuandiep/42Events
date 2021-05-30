@@ -14,6 +14,7 @@ protocol EventsViewToPresenterProtocol: class {
     var router: EventsPresenterToRouterProtocol? { get set }
     func loadData()
     func isShowMedalChangedValue(isShowMedal: Bool, tableView: UITableView)
+    func showMenu(view: UIView)
 }
 
 protocol EventsPresenterToViewProtocol: class {
@@ -21,7 +22,7 @@ protocol EventsPresenterToViewProtocol: class {
 }
 
 protocol EventsPresenterToRouterProtocol: class {
-
+    func showMenu(view: UIView)
 }
 
 protocol EventsPresenterToInteractorProtocol: class {
