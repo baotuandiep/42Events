@@ -51,14 +51,14 @@ class EventsTableViewCell: UITableViewCell {
             medalCategogiesLabel.isHidden = data.categories == nil
             medalTypeLabel.text = data.eventTypeString
             if let url = URL(string: data.medalViewImage) {
-                medalImageView.downloadImage(url: url)
+                medalImageView.downloadImage(url: url, placeholder: UIImage(named: "square_thumbnail")!)
             }
         } else {
             freeMedalView.isHidden = !data.isFreeEngraving
             dateLabel.text = data.racePeriod
             titleLabel.text = data.raceName
             if let url = URL(string: data.bannerCard) {
-                titleImageView.downloadImage(url: url)
+                titleImageView.downloadImage(url: url, placeholder: UIImage(named: "thumbnail"))
             }
             collectionView.reloadData()
             layoutIfNeeded()

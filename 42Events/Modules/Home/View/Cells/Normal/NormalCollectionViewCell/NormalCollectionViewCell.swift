@@ -15,7 +15,7 @@ class NormalCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var freeMedalView: UIView!
-    
+
     var data: EventModel?
 
     override func awakeFromNib() {
@@ -35,7 +35,7 @@ class NormalCollectionViewCell: UICollectionViewCell {
         dateLabel.text = data.racePeriod
         titleLabel.text = data.raceName
         if let url = URL(string: data.bannerCard) {
-            titleImageView.downloadImage(url: url)
+            titleImageView.downloadImage(url: url, placeholder: UIImage(named: "thumbnail"))
         }
     }
 }

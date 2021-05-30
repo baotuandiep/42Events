@@ -32,7 +32,7 @@ extension FeatureTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(type: FeatureCollectionViewViewCell.self, for: indexPath)
         if let urlImage = URL(string: datas[indexPath.row].bannerCard) {
-            cell.cellImageView.downloadImage(url: urlImage)
+            cell.cellImageView.downloadImage(url: urlImage, placeholder: UIImage(named: "thumbnail"))
         }
         return cell
     }
