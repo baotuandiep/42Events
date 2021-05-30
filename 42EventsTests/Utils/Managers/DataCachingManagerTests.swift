@@ -14,11 +14,13 @@ class DataCachingManagerTests: XCTestCase {
     var dataCachingMagager: DataCachingManager!
     override func setUp() {
         dataCachingMagager = DataCachingManager(fileName: "testing")
+        super.setUp()
     }
 
     override func tearDown() {
         dataCachingMagager.deleteLocal()
         dataCachingMagager = nil
+        super.tearDown()
     }
 
     func testSaveAndLoadData() {

@@ -12,8 +12,8 @@ class HomeInteractor {
     weak var presenter: HomeInteractorToPresenterProtocol?
     let path = "race-events"
     var dataCachingManager: DataCachingManager
-
-    private var expirationTime: Double = 3600 // 1 hour
+    var apiManager = APIManager.shared
+    var expirationTime: Double = 3600 // 1 hour
 
     init() {
         dataCachingManager = DataCachingManager(fileName: path)
@@ -34,7 +34,7 @@ extension HomeInteractor: HomePresenterToInteractorProtocol {
 
 extension HomeInteractor {
     func loadDataFromAPI() {
-        APIManager.shared.loadData(type: HomeModel.self, path: path, queryParams: [:]) { [weak self] in
+        apiManager.loadData(type: HomeModel.self, path: path, queryParams: [:]) { [weak self] in
             guard let self = self else { return }
             switch $0 {
             case .success(let model):

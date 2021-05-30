@@ -16,6 +16,7 @@ class ImageCachingManagerTests: XCTestCase {
 
     override func setUp() {
         imageCachingManager = ImageCachingManager.shared
+        super.setUp()
     }
 
     override func tearDown() {
