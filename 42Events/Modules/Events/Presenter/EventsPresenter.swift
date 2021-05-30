@@ -26,17 +26,6 @@ extension EventsPresenter: EventsViewToPresenterProtocol {
         interactor?.loadData()
     }
 
-    func isShowMedalChangedValue(isShowMedal: Bool, tableView: UITableView) {
-        let visibleCells: [UITableViewCell] = tableView.visibleCells
-        var indexPaths: [IndexPath] = []
-        visibleCells.forEach {
-            if let indexPath = tableView.indexPath(for: $0) {
-                indexPaths.append(indexPath)
-            }
-        }
-        tableView.reloadRows(at: indexPaths, with: .automatic)
-    }
-
     func showMenu(view: UIView) {
         router?.showMenu(view: view)
     }

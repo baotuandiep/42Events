@@ -67,7 +67,7 @@ extension EventsViewController: UITableViewDelegate {
             view.switchChangeValue = { [weak self] in
                 guard let self = self else { return }
                 self.isShowMedal = $0
-                self.presenter?.isShowMedalChangedValue(isShowMedal: $0, tableView: self.tableView)
+                self.reloadCurrentView()
             }
             return view
         }
@@ -75,6 +75,36 @@ extension EventsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
+    }
+
+    func reloadCurrentView() {
+        let visibleCells: [UITableViewCell] = tableView.visibleCells
+        var indexPaths: [IndexPath] = []
+        var maxIndex = 0
+        var minIndex = datas.count - 1
+        visibleCells.forEach {
+            if let indexPath = tableView.indexPath(for: $0) {
+                indexPaths.append(indexPath)
+                maxIndex = max(indexPath.row, maxIndex)
+                minIndex = min(indexPath.row, minIndex)
+            }
+        }
+        var currentCountUp = 0
+        // reload 2 more index in bottom
+        while currentCountUp < 2 && maxIndex < datas.count {
+            currentCountUp += 1
+            indexPaths.append(IndexPath(row: maxIndex, section: 0))
+            maxIndex += 1
+        }
+        // reload 2 more index in top
+        currentCountUp = 0
+        while currentCountUp < 2 && minIndex >= 0 {
+            currentCountUp += 1
+            indexPaths.append(IndexPath(row: minIndex, section: 0))
+            minIndex -= 1
+        }
+
+        tableView.reloadRows(at: indexPaths, with: .automatic)
     }
 }
 

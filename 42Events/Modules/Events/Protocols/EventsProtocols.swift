@@ -13,7 +13,6 @@ protocol EventsViewToPresenterProtocol: class {
     var interactor: EventsPresenterToInteractorProtocol? { get set }
     var router: EventsPresenterToRouterProtocol? { get set }
     func loadData()
-    func isShowMedalChangedValue(isShowMedal: Bool, tableView: UITableView)
     func showMenu(view: UIView)
 }
 
