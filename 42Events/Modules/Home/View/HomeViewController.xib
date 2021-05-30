@@ -33,26 +33,26 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWL-pF-0Dm">
-                            <rect key="frame" x="157" y="376" width="100" height="144"/>
+                            <rect key="frame" x="167" y="386" width="80" height="124"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Chx-Ol-shk">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="144"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="124"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="hgu-s9-FvL">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="83.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="67"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="cGv-0M-EJX"/>
+                                                <constraint firstAttribute="width" constant="80" id="cGv-0M-EJX"/>
                                                 <constraint firstAttribute="width" secondItem="hgu-s9-FvL" secondAttribute="height" multiplier="6:5" id="vQO-WH-6MF"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBv-Vj-u3p">
-                                            <rect key="frame" x="8" y="88.5" width="84" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="4.5" y="72" width="71.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-cR-p55">
-                                            <rect key="frame" x="0.0" y="114" width="100" height="30"/>
+                                            <rect key="frame" x="0.0" y="94" width="80" height="30"/>
                                             <state key="normal" title="Retry"/>
                                             <connections>
                                                 <action selector="retryTouched:" destination="-1" eventType="touchUpInside" id="2pn-18-7sA"/>

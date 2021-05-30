@@ -12,7 +12,7 @@ class EventsRouter: EventsPresenterToRouterProtocol {
     static func createModule(eventType: EventsType) -> EventsViewController {
         let viewController = EventsViewController()
         let presenter = EventsPresenter(eventType: eventType)
-        let interactor = EventsInteractor()
+        let interactor = EventsInteractor(eventType: eventType)
         let router = EventsRouter()
 
         viewController.presenter = presenter

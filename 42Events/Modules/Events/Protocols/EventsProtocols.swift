@@ -27,7 +27,7 @@ protocol EventsPresenterToRouterProtocol: class {
 
 protocol EventsPresenterToInteractorProtocol: class {
     var presenter: EventsInteractorToPresenterProtocol? { get set }
-    func loadData(eventType: EventsType)
+    func loadData()
 }
 
 protocol EventsInteractorToPresenterProtocol: class {

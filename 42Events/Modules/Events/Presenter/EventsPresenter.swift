@@ -22,7 +22,7 @@ class EventsPresenter {
 extension EventsPresenter: EventsViewToPresenterProtocol {
     func loadData() {
         (view as? UIViewController)?.title = eventType.rawValue.capitalized
-        interactor?.loadData(eventType: eventType)
+        interactor?.loadData()
     }
 
     func isShowMedalChangedValue(isShowMedal: Bool, tableView: UITableView) {

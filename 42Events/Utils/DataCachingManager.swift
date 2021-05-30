@@ -10,7 +10,7 @@ import Foundation
 
 class DataCachingManager {
 
-    private let fileName: String
+    var fileName: String
     private let fileExtension = "json"
 
     init(fileName: String) {

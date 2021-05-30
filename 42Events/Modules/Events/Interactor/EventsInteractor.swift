@@ -13,28 +13,30 @@ class EventsInteractor {
 
     let path = "race-filters"
     var dataCachingManager: DataCachingManager
+    var eventType: EventsType
 
     private var expirationTime: Double = 3600 // 1 hour
 
-    init() {
-        dataCachingManager = DataCachingManager(fileName: path)
+    init(eventType: EventsType) {
+        self.eventType = eventType
+        dataCachingManager = DataCachingManager(fileName: path + eventType.rawValue)
     }
 }
 
 extension EventsInteractor: EventsPresenterToInteractorProtocol {
-    func loadData(eventType: EventsType) {
+    func loadData() {
         let savedTimestamp = UserDefaults.standard.double(forKey: path + eventType.rawValue)
         if Date().timeIntervalSince1970 - savedTimestamp < expirationTime,
             let model = dataCachingManager.loadCachingData(type: EventsModel.self) {
             presenter?.receiveData(datas: model.data)
         } else {
-            loadDataFromAPI(eventType: eventType)
+            loadDataFromAPI()
         }
     }
 }
 
 extension EventsInteractor {
-    func loadDataFromAPI(eventType: EventsType) {
+    func loadDataFromAPI() {
         let queryParams: [String: Any] = [
             "skipCount": 0,
             "limit": 10,
@@ -48,7 +50,7 @@ extension EventsInteractor {
                 DispatchQueue.global(qos: .background).async { [weak self] in
                     self?.dataCachingManager.saveCachingData(model: model)
                 }
-                UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: self.path + eventType.rawValue)
+                UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: self.path + self.eventType.rawValue)
             case .error(let error):
                 print(error)
             }
