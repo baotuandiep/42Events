@@ -56,40 +56,44 @@ class APIManager: NSObject {
         handleRequest(type: type, url: url, completion: completion)
     }
 
-    private func handleRequest<T: Decodable>(type: T.Type, url: URL, completion: @escaping ((APIResult<T>) -> Void)) {
-        let task = urlSession.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                return completion(.error(.requestError(error.localizedDescription)))
-            }
-
-            guard let httpResponse = response as? HTTPURLResponse else {
-                return completion(.error(.unknow))
-            }
-            switch httpResponse.statusCode {
-            case 200...299:
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                if let data = data {
-                    do {
-                        let result = try decoder.decode(T.self, from: data)
-                        completion(.success(result))
-                    } catch {
-                        completion(.error(.dataError))
-                    }
-                } else {
-                    completion(.error(.noData))
-                }
-            case 404:
-                completion(.error(.noData))
-            case 400...499:
-                completion(.error(.clientError))
-            case 500...599:
-                completion(.error(.serverError))
-            default:
-                completion(.error(.unknow))
-            }
+    func handleRequest<T: Decodable>(type: T.Type, url: URL, completion: @escaping ((APIResult<T>) -> Void)) {
+        let task = urlSession.dataTask(with: url) { [weak self] (data, response, error) in
+            self?.handleDataResponse(data: data, response: response, error: error, completion: completion)
         }
         task.resume()
+    }
+
+    func handleDataResponse<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping ((APIResult<T>) -> Void)) {
+        if let error = error {
+            return completion(.error(.requestError(error.localizedDescription)))
+        }
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            return completion(.error(.unknow))
+        }
+        switch httpResponse.statusCode {
+        case 200...299:
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            if let data = data {
+                do {
+                    let result = try decoder.decode(T.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.error(.dataError))
+                }
+            } else {
+                completion(.error(.noData))
+            }
+        case 404:
+            completion(.error(.noData))
+        case 400...499:
+            completion(.error(.clientError))
+        case 500...599:
+            completion(.error(.serverError))
+        default:
+            completion(.error(.unknow))
+        }
     }
 
     private func url(path: String, queryParams: [String: Any]) -> URL? {
