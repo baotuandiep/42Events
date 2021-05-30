@@ -33,4 +33,8 @@ class ImageCachingManager {
             }
         }
     }
+
+    func clearAllCache() {
+        cache.removeAllObjects()
+    }
 }
