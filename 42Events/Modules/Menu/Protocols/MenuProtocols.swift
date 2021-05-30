@@ -6,7 +6,7 @@
 //  Copyright © 2021 Tuan Diep. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol MenuViewToPresenterProtocol: class {
     var view: MenuPresenterToViewProtocol? { get set }
@@ -15,7 +15,8 @@ protocol MenuViewToPresenterProtocol: class {
 }
 
 protocol MenuPresenterToViewProtocol: class {
-
+    func showView(superview: UIView)
+    func closeView()
 }
 
 protocol MenuPresenterToRouterProtocol: class {

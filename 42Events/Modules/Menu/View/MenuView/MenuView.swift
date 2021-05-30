@@ -14,6 +14,12 @@ class MenuView: UIView {
     }
 
     @IBOutlet weak var tableView: UITableView!
+    var presenter: MenuViewToPresenterProtocol?
+
+    var topConstraint: NSLayoutConstraint?
+    var leadingConstraint: NSLayoutConstraint?
+//    var widthConstraint: NSLayoutConstraint?
+//    var heightConstraint: NSLayoutConstraint?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -78,5 +84,35 @@ extension MenuView: UITableViewDelegate {
 
 
 extension MenuView: MenuPresenterToViewProtocol {
+    func showView(superview: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        superview.addSubview(self)
+        let widthConstraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: superview, attribute: .width, multiplier: 1, constant: 44)
+        let heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: superview, attribute: .height, multiplier: 1, constant: 0)
 
+        leadingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: superview, attribute: .leading, multiplier: 1, constant: superview.frame.width)
+        topConstraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: superview, attribute: .top, multiplier: 1, constant: -superview.frame.height)
+
+        superview.addConstraints([widthConstraint, heightConstraint, leadingConstraint!, topConstraint!])
+        layoutIfNeeded()
+        superview.layoutIfNeeded()
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            self?.leadingConstraint?.constant = 0
+            self?.topConstraint?.constant = 0
+            self?.layoutIfNeeded()
+            self?.superview?.layoutIfNeeded()
+        }
+    }
+
+    func closeView() {
+        guard let superview = superview else { return }
+        UIView.animate(withDuration: 0.4, animations: { [weak self] in
+            self?.leadingConstraint?.constant = superview.frame.width
+            self?.topConstraint?.constant = -superview.frame.height
+            self?.superview?.layoutIfNeeded()
+            self?.layoutIfNeeded()
+        }, completion: { [weak self] _ in
+            self?.removeFromSuperview()
+        })
+    }
 }

@@ -38,7 +38,6 @@ class LanguageView: UIView {
     }
 
     @IBAction func closeViewTouched(_ sender: UIButton) {
-        print("closeViewTouched")
         close?()
     }
 }

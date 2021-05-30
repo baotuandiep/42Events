@@ -6,7 +6,7 @@
 //  Copyright © 2021 Tuan Diep. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MenuPresenter {
     weak var view: MenuPresenterToViewProtocol?
@@ -20,4 +20,14 @@ extension MenuPresenter: MenuViewToPresenterProtocol {
 
 extension MenuPresenter: MenuInteractorToPresenterProtocol {
 
+}
+
+extension MenuPresenter {
+    func showView(superview: UIView) {
+        view?.showView(superview: superview)
+    }
+
+    func closeView() {
+        view?.closeView()
+    }
 }

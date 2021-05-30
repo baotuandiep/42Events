@@ -8,22 +8,31 @@
 
 import UIKit
 
-class MenuRouter {
+class MenuRouter: MenuPresenterToRouterProtocol {
     static func createModule(on view: UIView) -> MenuView {
 //        let window = UIApplication.shared.connectedScenes.filter({$0.activationState == .foregroundActive})
 //        .map({$0 as? UIWindowScene})
 //        .compactMap({$0})
 //        .first?.windows
 //        .filter({$0.isKeyWindow}).first
-        let menuView = MenuView.instantiate()
-        view.addSubview(menuView)
-        menuView.translatesAutoresizingMaskIntoConstraints = false
+        if let menuView = view.subviews.first(where: { $0 is MenuView }) as? MenuView {
+            (menuView.presenter as? MenuPresenter)?.closeView()
+            return menuView
+        } else {
+            let menuView = MenuView.instantiate()
 
-        menuView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        menuView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        menuView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        menuView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            let presenter = MenuPresenter()
+            let interactor = MenuInteractor()
+            let router = MenuRouter()
 
-        return menuView
+            menuView.presenter = presenter
+            presenter.view = menuView
+            presenter.router = router
+            presenter.interactor = interactor
+            interactor.presenter = presenter
+
+            presenter.showView(superview: view)
+            return menuView
+        }
     }
 }
